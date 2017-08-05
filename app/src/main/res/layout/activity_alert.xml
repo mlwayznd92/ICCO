@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/llToolbar"
+        layout="@layout/layout_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ListView
+        android:id="@+id/lvAlert"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/llToolbar"
+        android:choiceMode="singleChoice"
+        android:divider="@color/black_5"
+        android:dividerHeight="1dp" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="@dimen/p60dp"
+        android:layout_height="@dimen/p60dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_progressbar"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

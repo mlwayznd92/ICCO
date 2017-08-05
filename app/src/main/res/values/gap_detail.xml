@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gap_detail_html">
+        <![CDATA[
+            <html>
+            <head>
+                <link rel="stylesheet" type="text/css" href="news_style.css">
+            </head>
+            <body>
+                [content_body]
+            </body>
+            </html>
+        ]]>
+    </string>
+</resources>

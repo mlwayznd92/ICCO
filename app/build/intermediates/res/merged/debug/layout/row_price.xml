@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_border_bottom_dark"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/price_province_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="30"
+        android:padding="@dimen/p10dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/price_organisation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="25"
+        android:padding="@dimen/p10dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/price_average"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="25"
+        android:padding="@dimen/p10dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/price_unit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:padding="@dimen/p10dp"
+        android:textColor="@color/black"/>
+
+</LinearLayout>

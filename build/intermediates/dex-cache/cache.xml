@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/library/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4be05f1c7e78b6c197fbce353f15578fd2b95e7a">
+        <dex dex="/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/transforms/dex/debug/folders/1000/4/classes_5b33552e1e04357f54bb03715c439fce630b0c9b/classes.dex" />
+    </item>
+
+</items>

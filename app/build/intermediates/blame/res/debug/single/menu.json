@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/menu/menu_search.xml",
+        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/menu/menu_search.xml"
+    },
+    {
+        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/menu/menu_item.xml",
+        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/menu/menu_item.xml"
+    },
+    {
+        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/menu/main.xml",
+        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/menu/main.xml"
+    },
+    {
+        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/menu/activity_main_drawer.xml",
+        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/menu/activity_main_drawer.xml"
+    }
+]

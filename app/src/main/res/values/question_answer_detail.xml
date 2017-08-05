@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="question_answer_detail_html" formatted="false">
+        <![CDATA[
+            <html>
+            <head>
+                <link rel="stylesheet" type="text/css" href="news_style.css">
+            </head>
+            <body>
+                <p style="font-weight: bold">[question]<p>
+                [image]
+                [answer_label]
+                [content_body]
+            </body>
+            </html>
+        ]]>
+    </string>
+</resources>

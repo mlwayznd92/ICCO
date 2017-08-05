@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="horizontal">
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/tvWhatDoYouWant"
+                android:layout_width="@dimen/p220dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/what_do_you_want_see"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/s14sp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnWeatherInfo"
+                android:layout_width="@dimen/p220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvWhatDoYouWant"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/p20dp"
+                android:background="@drawable/btn_base_light_border_light"
+                android:drawableLeft="@drawable/ic_weather_30"
+                android:paddingLeft="@dimen/p10dp"
+                android:text="@string/weather_info"
+                android:textColor="@color/black"
+                android:textSize="@dimen/s14sp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnPestAndDisease"
+                android:layout_width="@dimen/p220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnWeatherInfo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/p10dp"
+                android:background="@drawable/btn_base_light_border_light"
+                android:drawableLeft="@drawable/pest_disease_30px"
+                android:paddingLeft="@dimen/p10dp"
+                android:text="@string/pest_and_disease"
+                android:textColor="@color/black"
+                android:textSize="@dimen/s14sp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnSoilFertility"
+                android:layout_width="@dimen/p220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnPestAndDisease"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/p10dp"
+                android:background="@drawable/btn_base_light_border_light"
+                android:drawableLeft="@drawable/soil_fertility_30px"
+                android:paddingLeft="@dimen/p10dp"
+                android:text="@string/soil_fertility"
+                android:textColor="@color/black"
+                android:textSize="@dimen/s14sp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnPrice"
+                android:layout_width="@dimen/p220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnSoilFertility"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/p10dp"
+                android:background="@drawable/btn_base_light_border_light"
+                android:drawableLeft="@drawable/ic_price_24"
+                android:paddingLeft="@dimen/p10dp"
+                android:text="@string/price"
+                android:textColor="@color/black"
+                android:textSize="@dimen/s14sp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnSale"
+                android:layout_width="@dimen/p220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnPrice"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/p10dp"
+                android:background="@drawable/btn_base_light_border_light"
+                android:drawableLeft="@drawable/ic_sale_30px"
+                android:paddingLeft="@dimen/p10dp"
+                android:text="@string/sale"
+                android:textColor="@color/black"
+                android:textSize="@dimen/s14sp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnBuy"
+                android:layout_width="@dimen/p220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnSale"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/p10dp"
+                android:background="@drawable/btn_base_light_border_light"
+                android:drawableLeft="@drawable/ic_shopping_cat_30"
+                android:paddingLeft="@dimen/p10dp"
+                android:text="@string/buy"
+                android:textColor="@color/black"
+                android:textSize="@dimen/s14sp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnNews"
+                android:layout_width="@dimen/p220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnBuy"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/p10dp"
+                android:background="@drawable/btn_base_light_border_light"
+                android:drawableLeft="@drawable/ic_fiber_new_black_24dp"
+                android:paddingLeft="@dimen/p10dp"
+                android:text="@string/news"
+                android:textColor="@color/black"
+                android:textSize="@dimen/s14sp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnQuestionAndAnswer"
+                android:layout_width="@dimen/p220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnNews"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/p10dp"
+                android:background="@drawable/btn_base_light_border_light"
+                android:drawableLeft="@drawable/ic_question_answer_black_24dp"
+                android:paddingLeft="@dimen/p10dp"
+                android:text="@string/question_and_answer"
+                android:textColor="@color/black"
+                android:textSize="@dimen/s14sp"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/group_feature"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_weather_info"
+            android:icon="@drawable/ic_weather_48dp"
+            android:title="@string/weather_info"
+            />
+
+        <item
+            android:id="@+id/nav_pest_and_disease"
+            android:icon="@drawable/pest_disease_50px"
+            android:title="@string/pest_and_disease"
+            />
+
+        <item
+            android:id="@+id/nav_soil_fertility"
+            android:icon="@drawable/soil_fertility_50px"
+            android:title="@string/soil_fertility"
+            />
+
+        <item
+            android:id="@+id/nav_price"
+            android:icon="@drawable/ic_price_48dp"
+            android:title="@string/price"
+            />
+
+        <item
+            android:id="@+id/nav_sale"
+            android:icon="@drawable/ic_sale_50px"
+            android:title="@string/sale"/>
+
+        <item
+            android:id="@+id/nav_buy"
+            android:icon="@drawable/ic_shopping_cat_48dp"
+            android:title="@string/buy"/>
+
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_fiber_new_black_48dp"
+            android:title="@string/news"/>
+
+        <item
+            android:id="@+id/nav_question_and_answer"
+            android:icon="@drawable/ic_question_answer_black_48dp"
+            android:title="@string/question_and_answer"
+            />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout_48dp"
+            android:title="@string/logout"
+            android:visible="false"/>
+    </group>
+</menu>

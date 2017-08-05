@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="date_of_week">
+        <item>C.Nhật</item>
+        <item>T.Hai</item>
+        <item>T.Ba</item>
+        <item>T.Tư</item>
+        <item>T.Năm</item>
+        <item>T.Sáu</item>
+        <item>T.Bảy</item>
+    </string-array>
+    <string-array name="month_of_year">
+        <item>T.Một</item>
+        <item>T.Hai</item>
+        <item>T.Ba</item>
+        <item>T.Bốn</item>
+        <item>T.Năm</item>
+        <item>T.Sáu</item>
+        <item>T.Bảy</item>
+        <item>T.Tám</item>
+        <item>T.Chín</item>
+        <item>T.Mười</item>
+        <item>T.Mười một</item>
+        <item>T.Mười hai</item>
+    </string-array>
+    <string name="action_settings">Cài đặt</string>
+    <string name="active_account">Kích hoạt tài khoản</string>
+    <string name="address">Địa chỉ</string>
+    <string name="address_label">Địa chỉ:</string>
+    <string name="adv_map">Khuyến cáo</string>
+    <string name="alerts">Thông báo</string>
+    <string name="am">SA</string>
+    <string name="amount_of_rain_label">Lượng mưa:</string>
+    <string name="answer_label">Trả lời:</string>
+    <string name="app_name">Green Coffee</string>
+    <string name="average_price">Giá</string>
+    <string name="back">Quay lại</string>
+    <string name="buy">Cần mua</string>
+    <string name="buy_tab_name">Cần mua</string>
+    <string name="buy_trans_tab_name">Lịch sử</string>
+    <string name="cancel">Hủy</string>
+    <string name="change_info_price">Thay đổi</string>
+    <string name="choose_location">Chọn vị trí</string>
+    <string name="close">Đóng</string>
+    <string formatted="false" name="coffee_graph_title">Giá cà phê tại %s từ %s đến %s</string>
+    <string name="coffee_price">Giá cà phê:</string>
+    <string name="data_not_enough">Không đủ dữ liệu</string>
+    <string name="date">Ngày</string>
+    <string name="description">Mô tả</string>
+    <string name="detail_map">Chi tiết</string>
+    <string formatted="false" name="do_">%s°</string>
+    <string formatted="false" name="do_c">%s°C</string>
+    <string name="email">Hộp thư</string>
+    <string name="email_invalid">Mail không đúng</string>
+    <string name="exchange_trans">Lịch sử giao dịch</string>
+    <string name="female">Nữ</string>
+    <string name="fertility_label">Độ phì nhiêu:</string>
+    <string name="first_name">Tên</string>
+    <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="free_shipping_free_turn">Miễn phí vận chuyển. Miễn phí giao trả</string>
+    <string name="full_name">Tên đầy đủ</string>
+    <string name="full_name_label">Tên đầy đủ:</string>
+    <string name="gps_message">GPS đang tắt. Bạn có muốn thực hiện cài đặt?</string>
+    <string name="gps_setting_title">Cài đặt GPS</string>
+    <string name="guest">Chưa đăng nhập</string>
+    <string name="guest_message">Bạn cần đăng nhập</string>
+    <string name="high">Cao</string>
+    <string name="humidity_label">Độ ẩm:</string>
+    <string name="image_label">Ảnh:</string>
+    <string formatted="false" name="input_empty">Không được để trống %s</string>
+    <string name="join_green_coffee">Đăng ký Green Coffee</string>
+    <string name="language_label">Ngôn ngữ:</string>
+    <string name="last_name">Hợ</string>
+    <string name="location">Vị trí:</string>
+    <string name="login_cancel">Hủy đăng nhập</string>
+    <string name="login_guest">Đăng nhập khách</string>
+    <string name="login_social_fail">Đăng nhập thất bại</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="low">Thấp</string>
+    <string name="male">Nam</string>
+    <string formatted="false" name="member_since_x">Thành viên từ %s</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="news">Tin tức</string>
+    <string name="organisation">Tổ chức</string>
+    <string name="over_current_date">Vượt quá ngày hiện tại</string>
+    <string name="password">Mật khẩu</string>
+    <string name="password_change_success">Mật khẩu của bạn đã được tạo lại thành công, vui lòng kiểm tra hộp thư.</string>
+    <string name="password_condition">Mật khẩu phải chứa tối thiểu 6 ký tự</string>
+    <string name="password_invalid">Mật khẩu không đúng</string>
+    <string name="password_label">Mật khẩu:</string>
+    <string name="pest_and_disease">Sâu bệnh</string>
+    <string name="phone_number">Số điện thoại</string>
+    <string name="phone_number_label">Số điện thoại:</string>
+    <string name="pm">CH</string>
+    <string name="policy_and_terms">Điều khoản sử dụng</string>
+    <string name="price">Giá</string>
+    <string name="price_">Giá:</string>
+    <string name="profile">Thông tin</string>
+    <string name="province">Tỉnh</string>
+    <string name="province_label">Tỉnh:</string>
+    <string name="province_price">Tỉnh</string>
+    <string name="question_and_answer">Hỏi và trả lời</string>
+    <string name="question_label">Câu hỏi:</string>
+    <string name="require_location">Nhập vị trí</string>
+    <string name="require_price">Nhập giá</string>
+    <string name="require_question">Nhập câu hỏi</string>
+    <string name="require_total_quantity">Nhập tổng sản lượng</string>
+    <string name="require_type_float">Kiểu dữ liệu số thực</string>
+    <string name="require_type_integer">Kiểu dữ liệu kiểu nguyên</string>
+    <string name="reset">Tạo lại</string>
+    <string name="reset_password">Lấy lại mật khẩu</string>
+    <string name="reset_password_message">Để lấy lại mật khẩu của bạn, hãy nhập email bạn đã đăng ký</string>
+    <string name="sale">Cần bán</string>
+    <string name="sale_tab_name">Cần bán</string>
+    <string name="sale_trans_tab_name">Lịch sử</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="search_every_thing">Tìm kiểm mọi thứ trên Green Coffee</string>
+    <string name="search_not_found">Không tìm kiếm thấy kết quả</string>
+    <string name="searching">Tìm kiếm...</string>
+    <string name="select_or_take_picture">Chọn hoặc chụp ảnh mới</string>
+    <string name="settings">Cài đặt</string>
+    <string name="sex_label">Giới tính:</string>
+    <string name="sign_in">Đăng nhập</string>
+    <string name="sign_into_green_copy">Đăng nhập Green Coffee</string>
+    <string name="sign_up">Đăng ký</string>
+    <string name="skip">Bỏ qua</string>
+    <string name="soil_fertility">Độ phì nhiêu đất</string>
+    <string name="soil_label">Đất:</string>
+    <string name="sold">Đã bán:</string>
+    <string name="temperature_label">Nhiệt độ:</string>
+    <string name="time_label">Thời gian:</string>
+    <string name="title_activity_price">Giá</string>
+    <string formatted="false" name="title_rain_graph">Lượng mưa tại %s từ %s đến %s</string>
+    <string formatted="false" name="title_temperature_graph">Nhiệt độ tại %s từ %s đến %s</string>
+    <string name="ton">tấn</string>
+    <string name="total_quality">Tổng sản lượng:</string>
+    <string name="type_coffee">Loại cà phê:</string>
+    <string name="un_named_road">Unnamed Road</string>
+    <string name="unit_price">Đơn vị</string>
+    <string name="unit_vnd_kg">VND/kg</string>
+    <string name="up_question">Tải lên câu hỏi</string>
+    <string name="update">Cập nhập</string>
+    <string name="update_profile_success">Cập nhập thông tin thành công</string>
+    <string name="username">Tài khoản</string>
+    <string name="weather_info">Thời tiết</string>
+    <string name="welcome">Xin chào</string>
+    <string name="what_do_you_want_see">Bạn muốn tìm kiếm gì trên green coffee?</string>
+    <string name="wind_direction_label">Hướng gió:</string>
+    <string name="wind_speed_label">Tốc độ gió:</string>
+    <string name="wrong_format_date">Sai định dạng ngày</string>
+</resources>

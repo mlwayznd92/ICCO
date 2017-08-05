@@ -1,0 +1,223 @@
+a, div, h1, h2, h3, h4, h5, input, li, p, small, span, time, ul {
+    font-family: helvetica,arial,sans-serif;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+div {
+    display: block;
+}
+
+.clearfix:after, .full-width-button:after, .inner-city-header #nav-current-location:after,
+	.news-feed #fdu-more-link a:after {
+	content: "";
+	display: table;
+	clear: both
+}
+
+#panel-main {
+	margin-top: 15px
+}
+
+#feature-history table, .feature-stats table, .table-styles {
+	margin-top: 15px;
+	width: 100%;
+	text-align: left;
+	font-size: 16px
+}
+
+#feature-history table thead tr, .feature-stats table thead tr,
+	.table-styles thead tr {
+	border: none
+}
+
+#feature-history table thead th, .feature-stats table thead th,
+	.table-styles thead th {
+	color: #999
+}
+
+#feature-history table tr, .feature-stats table tr, .table-styles tr {
+	height: 38px;
+	border-top: 1px solid #c8c8c8
+}
+
+#feature-history, .feature-stats {
+	overflow: hidden
+}
+
+#feature-history h3, .feature-stats h3 {
+	padding-left: 15px
+}
+
+#feature-history table, .feature-stats table {
+	margin-bottom: 10px
+}
+
+#feature-history thead tr, .feature-stats thead tr {
+	border: none
+}
+
+#feature-history thead th, .feature-stats thead th {
+	padding-left: 0;
+	color: #999;
+	text-align: left
+}
+
+#feature-history th, .feature-stats th {
+	padding-left: 15px;
+	color: #999
+}
+
+#feature-history td, #feature-history th, .feature-stats td,
+	.feature-stats th {
+	vertical-align: middle
+}
+
+#feature-history time, .feature-stats time {
+	font-size: 12px;
+	font-weight: 400;
+	color: #999
+}
+
+#feature-history {
+	position: relative;
+	padding-bottom: 20px
+}
+
+#feature-history table th {
+	width: auto
+}
+
+#feature-history .more {
+	display: block;
+	position: absolute;
+	bottom: 10px;
+	right: 15px;
+	font-size: 11px;
+	color: #ff684c
+}
+
+#feature-history .arrow {
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	background:
+		url(https://vortex.accuweather.com/adc2010/images/slate/arrow-right-solid-orange.svg)
+		no-repeat;
+	background-size: cover;
+	position: relative;
+	top: 4px
+}
+
+#feature-moon .arrow, #feature-sun .arrow, .jump-tabs .hourly-forecast a:after,
+	.small-right-arrow {
+	position: relative;
+	top: 3px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background:
+		url(https://vortex.accuweather.com/adc2010/images/slate/arrow-right-solid-orange.svg)
+		no-repeat;
+	background-size: cover;
+	background-position: 50%
+}
+
+#feature-moon, #feature-sun {
+	padding: 0 4px;
+	width: 100%
+}
+
+#feature-moon .inner, #feature-sun .inner {
+	padding: 15px;
+	background: #fff;
+	position: relative
+}
+
+#feature-moon h3, #feature-sun h3 {
+	padding-top: 0;
+	margin-top: 0
+}
+
+#feature-moon img, #feature-sun img {
+	display: none
+}
+
+#feature-moon .more, #feature-sun .more {
+	position: absolute;
+	bottom: 10px;
+	right: 15px;
+	font-size: 11px;
+	color: #f05514
+}
+
+#feature-moon .arrow, #feature-sun .arrow {
+	top: 4px
+}
+
+#feature-moon .icon, #feature-sun .icon {
+	position: absolute;
+	top: 20px;
+	height: 60px;
+	right: 20px;
+	background-position: 0 50%
+}
+
+#feature-moon .calendar-controls .arrow, #feature-sun .calendar-controls .arrow,
+	.calendar-controls #feature-moon .arrow, .calendar-controls #feature-sun .arrow,
+	.calendar-controls .jump-tabs .hourly-forecast a:after,
+	.calendar-controls .small-left-arrow, .calendar-controls .small-right-arrow,
+	.jump-tabs .hourly-forecast .calendar-controls a:after {
+	height: 16px;
+	width: 16px
+}
+
+#feature-moon .calendar-controls .arrow, #feature-sun .calendar-controls .arrow,
+	.calendar-controls #feature-moon .arrow, .calendar-controls #feature-sun .arrow,
+	.calendar-controls .jump-tabs .hourly-forecast a:after,
+	.calendar-controls .small-right-arrow, .jump-tabs .hourly-forecast .calendar-controls a:after
+	{
+	top: 2px
+}
+
+#feature-moon .calendar-controls .float-left:hover .arrow, #feature-sun .calendar-controls .float-left:hover .arrow,
+	.calendar-controls .float-left:hover #feature-moon .arrow,
+	.calendar-controls .float-left:hover #feature-sun .arrow,
+	.calendar-controls .float-left:hover .jump-tabs .hourly-forecast a:after,
+	.calendar-controls .float-left:hover .small-right-arrow, .jump-tabs .hourly-forecast .calendar-controls .float-left:hover a:after
+	{
+	background:
+		url(https://vortex.accuweather.com/adc2010/images/slate/arrow-left-solid-orange.svg);
+	background-size: cover
+}
+
+.icon[class*=-m] {
+    height: 60px;
+    width: 60px;
+}
+
+.i-33-m {
+    background-image: url(https://vortex.accuweather.com/adc2010/images/slate/icons/33.svg);
+}
+
+.i-1-m {
+    background-image: url(https://vortex.accuweather.com/adc2010/images/slate/icons/01.svg);
+}
+
+.icon {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#detail-day-night h4, #detail-hourly .premium-info h3, #ecBody h3, #feature-history h3, #feature-moon h3, #feature-sun h3, #footer-content-wrapper #footer-nav-inner .head, #forecast-feed li h3, #location-search-results h6, #menu-settings h4, .active-hurricane-status table tr h4, .article-story .sub-title, .calendar-block .box h3, .column-2 .history h4, .column-2 .hourly-table h4, .column-2 .rough-weather h4, .column-2 .weather-why h4, .downloads-list .articles li h4 a, .feature-module #popular-locations .loc a, .feature-stats h3, .hourly-table thead th, .inner-city-header #nav-current-location li .local-weather-dropdown h2, .interactive-radar-module.mincast-interactive h2, .mincast-timeline-panel h3, .news-feed .articles>h4, .news-feed .sub-title, .outlook-center-panel h2, .panel-list h3 a, .pollen-panel h2, .radar-list-set li.first a, .radar-panel-set.sidebar h3, .radar-panel-set h3, .results-list h3, .sidebar-blog-about h3, .special-indices-table table .idx-name, .sponsor-col2 .large-sidebar-module h3, .sponsor-col2 .sub-header, .sports-calendar .divs-dates .date-block, .storm-table h2, .sub-header, .sub-header-wrap .country-dropdown h3, .sub-header-wrap .country-dropdown h3 a, .sub-header-wrap .special-forecast-dropdown h3, .sub-header-wrap .special-forecast-dropdown h3 a, .travel-weather-map .sub-header {
+    -webkit-font-smoothing: antialiased;
+    color: #00afbe;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 10px 0;
+    display: block;
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/p15dp"
+            android:layout_marginTop="@dimen/p15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/p5dp"
+                android:text="@string/language_label"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btn_vn"
+                android:layout_width="@dimen/p30dp"
+                android:layout_height="@dimen/p30dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/ic_flat_vn"/>
+
+            <Button
+                android:id="@+id/btn_en"
+                android:layout_width="@dimen/p30dp"
+                android:layout_height="@dimen/p30dp"
+                android:background="@drawable/ic_flat_en"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="@dimen/p15dp"
+            android:text="@string/policy_and_terms"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/p10dp"
+            android:layout_weight="2"
+            android:background="@drawable/bg_border_dark"
+            android:padding="@dimen/p2dp">
+
+            <WebView
+                android:id="@+id/wvPolicyAndTerms"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnSkip"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="@dimen/p20dp"
+            android:layout_marginRight="@dimen/p10dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/skip"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progress_bar_load_map_detail"
+        android:layout_toEndOf="@+id/progress_bar_load_map_detail"
+        android:layout_toRightOf="@+id/progress_bar_load_map_detail"
+        android:scrollbars="vertical">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/p20dp"
+                android:layout_marginTop="@dimen/p20dp"
+                android:text="@string/address"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/p20dp"
+                android:layout_marginTop="@dimen/p5dp"
+                android:text="@string/date"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/p20dp"
+                android:layout_marginTop="@dimen/p5dp"
+                android:text="@string/description"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/p20dp"
+                android:layout_marginTop="@dimen/p20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgWtDay"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_wt_rain" />
+
+                <TextView
+                    android:id="@+id/tvTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/p10dp"
+                    android:layout_toRightOf="@+id/imgWtDay"
+                    android:text="27"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:id="@+id/tvDo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tvTemperature"
+                    android:text="@string/do_c_label"
+                    android:textStyle="bold"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tvDo"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/p20dp"
+                        android:layout_marginTop="@dimen/p3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/amount_of_rain_label" />
+
+                        <TextView
+                            android:id="@+id/tvAmoutOfRain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/p20dp"
+                        android:layout_marginTop="@dimen/p3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wind_speed_label" />
+
+                        <TextView
+                            android:id="@+id/tvWindSpeed"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/p20dp"
+                        android:layout_marginTop="@dimen/p3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wind_direction_label" />
+
+                        <TextView
+                            android:id="@+id/tvWindDirection"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_weather_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/p20dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:scrollbars="horizontal" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graphTemperature"
+                android:layout_width="match_parent"
+                android:layout_height="200dip"
+                android:layout_marginTop="50dp"
+                android:background="@color/white" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graphRain"
+                android:layout_width="match_parent"
+                android:layout_height="200dip"
+                android:layout_marginTop="@dimen/p50dp"
+                android:background="@color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress_bar_load_map_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

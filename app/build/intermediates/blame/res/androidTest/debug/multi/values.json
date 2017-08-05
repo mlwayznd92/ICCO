@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 104,
+                    "endOffset": 155
+                },
+                "from": {
+                    "file": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/generated/res/resValues/androidTest/debug/values/generated.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 155,
+                        "endColumn": 104,
+                        "endOffset": 255
+                    }
+                }
+            }
+        ]
+    }
+]

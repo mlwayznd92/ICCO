@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="@mipmap/marble_tile"
+    android:paddingLeft="@dimen/p20dp"
+    android:paddingRight="@dimen/p20dp"
+    android:paddingTop="@dimen/p30dp">
+
+    <ImageButton
+        android:id="@+id/ibtAlert"
+        android:layout_width="@dimen/p40dp"
+        android:layout_height="@dimen/p40dp"
+        android:layout_marginTop="@dimen/p30dp"
+        android:background="@drawable/btn_circle_light"
+        android:scaleType="centerInside"
+        android:src="@mipmap/top_bar_mail_button"
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="@dimen/p70dp"
+        android:layout_height="@dimen/p70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/p20dp"
+        android:src="@mipmap/no_user_profile_image"
+        android:scaleType="centerCrop"
+        app:civ_border_color="#cc459660"
+        app:civ_border_width="1dp"
+        />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivAvatar"
+        android:layout_marginTop="@dimen/p10dp"
+        android:gravity="center"
+        android:text="@string/guest"
+        android:textColor="@color/txt_base"
+        android:textSize="@dimen/s18sp" />
+
+</RelativeLayout>

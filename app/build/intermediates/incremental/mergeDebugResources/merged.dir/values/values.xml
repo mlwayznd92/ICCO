@@ -340,7 +340,7 @@
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
-    <color name="title">#222222</color>
+    <color name="title">#a6000000</color>
     <color name="transparent">@android:color/transparent</color>
     <color name="txt_base">#bb000000</color>
     <color name="txt_grey">#3d3d3d</color>
@@ -1014,7 +1014,7 @@
     <string name="close">Close</string>
     <string formatted="false" name="coffee_graph_title">Coffee price at %s from %s to %s</string>
     <string name="coffee_price">Coffee price:</string>
-    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">2d44fbeb-ac34-4619-80cd-b6726706ffd1</string>
+    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">af0b1dc1-03e1-4900-abbd-e5fc8f9621ea</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns2:g id="app_name">%1$s</ns2:g> won\'t work unless you enable Google Play services.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>

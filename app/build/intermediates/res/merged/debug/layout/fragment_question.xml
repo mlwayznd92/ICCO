@@ -33,6 +33,7 @@
                 android:drawablePadding="@dimen/p10dp"
                 android:gravity="top|left"
                 android:lines="5"
+                android:scrollHorizontally="false"
                 android:textSize="16sp"/>
 
         </LinearLayout>

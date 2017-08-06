@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -55,9 +56,8 @@ public class NewsTabsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_news_tabs, container, false);
         myApplication = (CustomApplication) mView.getContext().getApplicationContext();
         bindView();
@@ -93,19 +93,19 @@ public class NewsTabsFragment extends Fragment {
             if (tab != null) {
                 //TextView tabTextView = ;
 
-                TextView tabTextView = (TextView) LayoutInflater
-                        .from(getActivity())
-                        .inflate(R.layout.layout_tab_item,
-                                tabLayout,
-                                false);
+                TextView tabTextView = (TextView) LayoutInflater.from(getActivity())
+                        .inflate(R.layout.layout_tab_item, tabLayout, false);
                 tab.setCustomView(tabTextView);
                 tabTextView.getLayoutParams().width = ViewGroup.LayoutParams.WRAP_CONTENT;
                 tabTextView.getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                tabTextView.setTextColor(ContextCompat.getColor(mView.getContext(), R.color.black));
                 tabTextView.setText(tab.getText());
 
                 // First tab is the selected tab, so if i==0 then set BOLD typeface
                 if (i == 0) {
                     tabTextView.setTypeface(null, Typeface.BOLD);
+                    tabTextView.setTextColor(
+                            ContextCompat.getColor(mView.getContext(), R.color.blue_tabs));
                 }
             }
         }
@@ -117,13 +117,18 @@ public class NewsTabsFragment extends Fragment {
             public void onTabSelected(TabLayout.Tab tab) {
                 TextView tabTextView = (TextView) tab.getCustomView();
                 tabTextView.setTypeface(null, Typeface.BOLD);
+                tabTextView.setTextColor(
+                        ContextCompat.getColor(mView.getContext(), R.color.blue_tabs));
                 tabIndex = tab.getPosition();
+                searchView.closeSearch();
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
                 TextView tabTextView = (TextView) tab.getCustomView();
                 tabTextView.setTypeface(null, Typeface.NORMAL);
+                tabTextView.setTextColor(ContextCompat.getColor(mView.getContext(), R.color.black));
+                searchView.closeSearch();
             }
 
             @Override
@@ -142,8 +147,9 @@ public class NewsTabsFragment extends Fragment {
         viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager());
         tabIndex = 0;
         for (Category category : categoryList) {
-            viewPagerAdapter.addFragment(new NewsFragment(category.getId(), getFragmentManager(),
-                    searchView), category.getDisplayName());
+            viewPagerAdapter.addFragment(
+                    new NewsFragment(category.getId(), getFragmentManager(), searchView),
+                    category.getDisplayName());
         }
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setOffscreenPageLimit(categoryList.size());
@@ -159,7 +165,8 @@ public class NewsTabsFragment extends Fragment {
         Call<CategoryResponse> call = myApplication.apiService.getCategory(headerAuthen);
         call.enqueue(new Callback<CategoryResponse>() {
             @Override
-            public void onResponse(Call<CategoryResponse> call, Response<CategoryResponse> response) {
+            public void onResponse(Call<CategoryResponse> call,
+                                   Response<CategoryResponse> response) {
                 if (response == null || response.body() == null) return;
                 if (response.body().success) {
                     for (CategoryResponse.Item item : response.body().data.items) {

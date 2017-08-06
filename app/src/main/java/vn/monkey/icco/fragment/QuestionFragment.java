@@ -63,8 +63,8 @@ public class QuestionFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_question, container, false);
         context = mView.getContext();
         myApplication = (CustomApplication) context.getApplicationContext();
@@ -94,6 +94,10 @@ public class QuestionFragment extends Fragment {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                View focus = getActivity().getCurrentFocus();
+                if (focus != null) {
+                    Util.hiddenKeyboard(focus, mView.getContext());
+                }
                 FragmentManager fm = getFragmentManager();
                 fm.popBackStack();
                 toolbar.setNavigationIcon(R.drawable.menu_grey_36x36);
@@ -114,8 +118,8 @@ public class QuestionFragment extends Fragment {
                 pickIntent.setType("image/*");
                 pickIntent.setAction(Intent.ACTION_GET_CONTENT);
                 Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                String pickTitle = getString(
-                        R.string.select_or_take_picture); // Or get from strings.xml
+                String pickTitle =
+                        getString(R.string.select_or_take_picture); // Or get from strings.xml
                 Intent chooserIntent = Intent.createChooser(pickIntent, pickTitle);
                 chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{takePhotoIntent});
                 startActivityForResult(chooserIntent, SELECT_PICTURE);
@@ -161,8 +165,8 @@ public class QuestionFragment extends Fragment {
 
             try {
                 if (data.getData() != null) {
-                    InputStream inputStream
-                            = getActivity().getContentResolver().openInputStream(data.getData());
+                    InputStream inputStream =
+                            getActivity().getContentResolver().openInputStream(data.getData());
                     bitmap = BitmapFactory.decodeStream(inputStream);
                     bitmap = Bitmap.createScaledBitmap(bitmap, 500, 500, true);
                     imageView.setImageBitmap(bitmap);
@@ -194,16 +198,15 @@ public class QuestionFragment extends Fragment {
         Call<QuestionResponse> call = myApplication.apiService.ask(headerAuthen, question, image);
         call.enqueue(new Callback<QuestionResponse>() {
             @Override
-            public void onResponse(
-                    Call<QuestionResponse> call, Response<QuestionResponse> response) {
+            public void onResponse(Call<QuestionResponse> call,
+                                   Response<QuestionResponse> response) {
                 Util.enableTouch(progressBar, getActivity().getWindow());
                 if (response == null || response.body() == null) return;
                 if (response.body().success) {
                     Manager.QAS = null;
                     FragmentManager fragmentManager = getFragmentManager();
                     fragmentManager.beginTransaction()
-                                   .replace(R.id.flContainer, new QuestionAnswerFragment())
-                                   .commit();
+                            .replace(R.id.flContainer, new QuestionAnswerFragment()).commit();
                     Util.showToastMessage(myApplication, response.body().message);
                 } else {
                     Util.showToastMessage(myApplication, response.body().message);

@@ -84,7 +84,8 @@
                     android:layout_weight="3"
                     android:drawablePadding="@dimen/p10dp"
                     android:hint="@string/address"
-                    android:imeOptions="actionNext"/>
+                    android:imeOptions="actionDone"
+                    android:inputType="text"/>
             </LinearLayout>
 
             <LinearLayout

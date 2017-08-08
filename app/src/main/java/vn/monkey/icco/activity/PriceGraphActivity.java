@@ -114,8 +114,7 @@ public class PriceGraphActivity extends Activity {
         graph.addSeries(series);
 
         // legend
-        graph.getLegendRenderer().setVisible(true);
-        graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+        graph.getLegendRenderer().setVisible(false);
     }
 
     /**

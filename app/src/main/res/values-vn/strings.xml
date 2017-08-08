@@ -6,13 +6,14 @@
     <string name="free_shipping_free_turn">Miễn phí vận chuyển. Miễn phí giao trả</string>
     <string name="login_social_fail">Đăng nhập thất bại</string>
     <string name="sign_into_green_copy">Đăng nhập Green Coffee</string>
-    <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="forgot_password">Quên mật khẩu</string>
     <string name="password">Mật khẩu</string>
     <string name="email">Hộp thư</string>
     <string name="username">Tài khoản</string>
     <string name="phone_number">Số điện thoại</string>
     <string name="reset">Tạo lại</string>
     <string name="search_every_thing">Tìm kiểm mọi thứ trên Green Coffee</string>
+    <string name="change_password">Thay đổi mật khẩu</string>
     <string name="input_empty" formatted="false">Không được để trống %s</string>
     <string name="phone_number_label">Số điện thoại:</string>
     <string name="password_label">Mật khẩu:</string>
@@ -152,4 +153,8 @@
     </string-array>
     <string name="am">SA</string>
     <string name="pm">CH</string>
+    <string name="new_password_label">Mật khẩu mới:</string>
+    <string name="old_password_label">Mật khẩu cũ:</string>
+    <string name="new_password">Mật khẩu mới</string>
+    <string name="old_password">Mật khẩu cũ</string>
 </resources>

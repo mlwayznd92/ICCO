@@ -35,10 +35,10 @@ import vn.monkey.icco.util.Util;
 public class SignInActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private TextView tvTitle, tvForgotPass;
+    private TextView tvTitle, tvForgotPass, tvSignUp;
     private EditText edtPhoneNum, edtPassword;
     private ImageButton ibtBack;
-    private Button btnJoin, btnSignUp;
+    private Button btnJoin;
     private ProgressBar progressBar;
     private CustomApplication myApplication;
 
@@ -69,22 +69,20 @@ public class SignInActivity extends AppCompatActivity {
         edtPhoneNum = (EditText) findViewById(R.id.edtPhoneNum);
         edtPassword = (EditText) findViewById(R.id.edtPassword);
         btnJoin = (Button) findViewById(R.id.btnSignIn);
-        btnSignUp = (Button) findViewById(R.id.btnSignUp);
+        tvSignUp = (TextView) findViewById(R.id.tvSignUp);
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
     }
 
     private void init() {
+
         edtPhoneNum.setInputType(
                 InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
 
         tvForgotPass.setPaintFlags(tvForgotPass.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-
         tvForgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (validateInput()) {
-                    resetPasswordTask();
-                }
+                startActivity(new Intent(SignInActivity.this, ResetPasswordActivity.class));
             }
         });
 
@@ -105,7 +103,8 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
+        tvSignUp.setPaintFlags(tvSignUp.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
@@ -151,32 +150,6 @@ public class SignInActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                Util.enableTouch(progressBar, getWindow());
-                t.printStackTrace();
-            }
-        });
-    }
-
-    /**
-     * reset password
-     */
-    private void resetPasswordTask() {
-        String phone = edtPhoneNum.getText().toString();
-        String pass = edtPassword.getText().toString();
-        Util.disableTouch(progressBar, getWindow());
-        Call<BaseResponse> call = myApplication.apiService.resetPassword(phone, pass);
-        call.enqueue(new Callback<BaseResponse>() {
-            @Override
-            public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {
-                Util.enableTouch(progressBar, getWindow());
-                if (response == null || response.body() == null) return;
-                if (response.body().message != null)
-                    Util.showToastMessage(myApplication, response.body().message);
-
-            }
-
-            @Override
-            public void onFailure(Call<BaseResponse> call, Throwable t) {
                 Util.enableTouch(progressBar, getWindow());
                 t.printStackTrace();
             }

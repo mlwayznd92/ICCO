@@ -33,15 +33,16 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingRight="@dimen/p10dp"
-                    android:text="@string/phone_number_label"/>
+                    android:text="@string/new_password_label"/>
 
                 <EditText
-                    android:id="@+id/edtUsername"
+                    android:id="@+id/edtNewPass"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:drawablePadding="@dimen/p10dp"
-                    android:imeOptions="actionNext"/>
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword"/>
 
             </LinearLayout>
 
@@ -56,10 +57,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingRight="@dimen/p10dp"
-                    android:text="@string/password_label"/>
+                    android:text="@string/old_password_label"/>
 
                 <EditText
-                    android:id="@+id/edtPassword"
+                    android:id="@+id/edtOldPass"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -87,7 +88,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/p25dp"
                 android:background="@drawable/btn_base_light"
-                android:text="@string/join_green_coffee"
+                android:text="@string/change_password"
                 android:textAllCaps="true"
                 android:textColor="@color/black_75"
                 android:textSize="@dimen/s14sp"/>

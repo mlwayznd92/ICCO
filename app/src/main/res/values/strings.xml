@@ -6,8 +6,9 @@
     <string name="free_shipping_free_turn">Free shipping. Free return.</string>
     <string name="login_social_fail">Login fail</string>
     <string name="sign_into_green_copy">Sign into Green Coffee</string>
-    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot_password">Forgot Password</string>
     <string name="password">Password</string>
+    <string name="change_password">Change password</string>
     <string name="email">Email</string>
     <string name="username">Username</string>
     <string name="phone_number">Phone number</string>
@@ -164,4 +165,8 @@
     </string-array>
     <string name="am">AM</string>
     <string name="pm">PM</string>
+    <string name="new_password_label">New password:</string>
+    <string name="old_password_label">Old password:</string>
+    <string name="new_password">New Password</string>
+    <string name="old_password">Old password</string>
 </resources>

@@ -48,7 +48,7 @@ public class ProfileActivity extends AppCompatActivity {
     //    private static final int LOGIN_FOR_PROFILE = 1003;
     private Toolbar toolbar;
     private TextView tvTitle;
-    private ImageButton ibtBack, ibtChangePass;
+    private ImageButton ibtBack;
     private CustomApplication myApplication;
     private RadioGroup radioSexGroup;
     private Button btnUpdate;
@@ -78,7 +78,6 @@ public class ProfileActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         tvTitle = (TextView) toolbar.findViewById(R.id.tvTitle);
         ibtBack = (ImageButton) toolbar.findViewById(R.id.ibtBack);
-        ibtChangePass = (ImageButton) toolbar.findViewById(R.id.ibChangePass);
         btnUpdate = (Button) findViewById(R.id.btnUpdate);
         radioSexGroup = (RadioGroup) findViewById(R.id.radioSex);
         tvFullName = (EditText) findViewById(R.id.edtFullName);
@@ -92,17 +91,12 @@ public class ProfileActivity extends AppCompatActivity {
      */
     public void init() {
         loadUserInfo();
+        setSupportActionBar(toolbar);
         tvTitle.setText(getString(R.string.profile));
         ibtBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
-            }
-        });
-        ibtChangePass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
             }
         });
         btnUpdate.setOnClickListener(new View.OnClickListener() {
@@ -302,4 +296,22 @@ public class ProfileActivity extends AppCompatActivity {
         //            loadUserInfo();
         //        }
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_change_pass:
+                startActivity(new Intent(ProfileActivity.this, ChangePassActivity.class));
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_profile, menu);
+        return true;
+    }
+
 }

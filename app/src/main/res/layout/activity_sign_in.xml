@@ -68,22 +68,9 @@
 
             </LinearLayout>
 
-
-            <TextView
-                android:id="@+id/tvForgotPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/p10dp"
-                android:background="@drawable/bg_base_selector_transperent"
-                android:gravity="center"
-                android:text="@string/forgot_password"
-                android:textColor="@color/black_40"
-                android:textSize="@dimen/s16sp"
-                />
-
             <Button
                 android:id="@+id/btnSignIn"
-                android:layout_width="@dimen/p200dp"
+                android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"
@@ -93,19 +80,42 @@
                 android:textColor="@color/black_75"
                 android:textSize="@dimen/s14sp"/>
 
-            <Button
-                android:id="@+id/btnSignUp"
-                android:layout_width="@dimen/p200dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/p20dp"
-                android:background="@drawable/btn_base_light"
-                android:text="@string/sign_up"
-                android:textAllCaps="true"
-                android:textColor="@color/black_75"
-                android:textSize="@dimen/s14sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tvForgotPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/p10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_base_selector_transperent"
+                    android:gravity="center"
+                    android:text="@string/forgot_password"
+                    android:textColor="@color/black_40"
+                    android:textSize="@dimen/s16sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvSignUp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/p10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_base_selector_transperent"
+                    android:gravity="center"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/black_40"
+                    android:textSize="@dimen/s16sp"
+                    />
+
+            </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
 
     <ProgressBar

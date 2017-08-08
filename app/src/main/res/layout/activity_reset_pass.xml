@@ -36,7 +36,7 @@
                     android:text="@string/phone_number_label"/>
 
                 <EditText
-                    android:id="@+id/edtUsername"
+                    android:id="@+id/edtPhoneNum"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -69,28 +69,18 @@
 
             </LinearLayout>
 
-            <!--<TextView-->
-            <!--android:id="@+id/tvPasswordRule"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="@dimen/p10dp"-->
-            <!--android:gravity="center"-->
-            <!--android:maxLines="2"-->
-            <!--android:text="@string/password_condition"-->
-            <!--android:textColor="@color/black_50"-->
-            <!--android:textSize="@dimen/s13sp"/>-->
-
             <Button
-                android:id="@+id/btnJoin"
-                android:layout_width="200dp"
+                android:id="@+id/btnResetPass"
+                android:layout_width="@dimen/p200dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/p25dp"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/btn_base_light"
-                android:text="@string/join_green_coffee"
+                android:text="@string/reset_password"
                 android:textAllCaps="true"
                 android:textColor="@color/black_75"
                 android:textSize="@dimen/s14sp"/>
+
         </LinearLayout>
     </ScrollView>
 
@@ -102,5 +92,4 @@
         android:background="@drawable/bg_progressbar"
         android:indeterminate="true"
         android:visibility="gone"/>
-
 </RelativeLayout>

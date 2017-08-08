@@ -92,6 +92,14 @@
             android:name=".activity.SignUpActivity"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".activity.ChangePassActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".activity.ResetPasswordActivity"
+            android:screenOrientation="portrait"/>
+
         <activity android:name=".activity.ProfileActivity"/>
 
         <activity

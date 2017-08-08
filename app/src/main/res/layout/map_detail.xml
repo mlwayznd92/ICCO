@@ -7,9 +7,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/progress_bar_load_map_detail"
-        android:layout_toEndOf="@+id/progress_bar_load_map_detail"
-        android:layout_toRightOf="@+id/progress_bar_load_map_detail"
         android:scrollbars="vertical">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -57,7 +54,7 @@
 
                 <ImageView
                     android:id="@+id/imgWtDay"
-                    android:layout_width="60dp"
+                    android:layout_width="70dp"
                     android:layout_height="60dp"
                     android:src="@drawable/ic_wt_rain" />
 
@@ -158,14 +155,14 @@
                 android:id="@+id/graphTemperature"
                 android:layout_width="match_parent"
                 android:layout_height="200dip"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:background="@color/white" />
 
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/graphRain"
                 android:layout_width="match_parent"
                 android:layout_height="200dip"
-                android:layout_marginTop="@dimen/p50dp"
+                android:layout_marginTop="@dimen/p30dp"
                 android:background="@color/white" />
 
         </LinearLayout>

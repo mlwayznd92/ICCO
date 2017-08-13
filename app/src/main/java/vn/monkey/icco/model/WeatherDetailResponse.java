@@ -13,6 +13,7 @@ public class WeatherDetailResponse extends BaseResponse {
     public class Data {
         public Item items;
         public List<Item> events;
+        public List<Item> weather_week_ago;
     }
 
     public class Item {

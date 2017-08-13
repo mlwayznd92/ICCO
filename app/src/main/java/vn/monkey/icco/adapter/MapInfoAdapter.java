@@ -161,11 +161,29 @@ public class MapInfoAdapter implements GoogleMap.InfoWindowAdapter {
                         loc.setWindSpeed(event.wndspd_km_h);
                         loc.setWindDirection(event.wnddir);
                         loc.setTimestamp(event.timestamp);
-                        loc.setPrecipitation(items.precipitation);
+                        loc.setPrecipitation(event.precipitation);
                         events.add(loc);
                     }
 
+                    List<Location> histories = new ArrayList<Location>();
+                    for (WeatherDetailResponse.Item history : response.body().data.weather_week_ago) {
+                        Location loc = new Location();
+                        loc.setWtImage(history.image);
+                        loc.setWtTemp(history.t_average);
+                        loc.setWtDescription(history.content);
+                        loc.settMin(history.tmin);
+                        loc.settMax(history.tmax);
+                        loc.setTemp(history.tmin + "⁰C - " + history.tmax + "⁰C");
+                        loc.setAmoutOfRain(history.precipitation + history.precipitation_unit);
+                        loc.setWindSpeed(history.wndspd_km_h);
+                        loc.setWindDirection(history.wnddir);
+                        loc.setTimestamp(history.timestamp);
+                        loc.setPrecipitation(history.precipitation);
+                        histories.add(loc);
+                    }
+
                     location.setEvents(events);
+                    location.setHistories(histories);
                     location.setWtImage(items.image);
                     location.setWtTemp(items.t_average);
                     location.setWtDescription(items.content);

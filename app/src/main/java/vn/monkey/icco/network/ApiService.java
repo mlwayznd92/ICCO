@@ -31,6 +31,7 @@ import vn.monkey.icco.model.LoginResponse;
 import vn.monkey.icco.model.NewsDetailResponse;
 import vn.monkey.icco.model.NewsResponse;
 import vn.monkey.icco.model.PriceDetailResponse;
+import vn.monkey.icco.model.PriceExpandResponse;
 import vn.monkey.icco.model.PriceResponse;
 import vn.monkey.icco.model.QuestionAnswerDetailResponse;
 import vn.monkey.icco.model.QuestionAnswerResponse;
@@ -82,6 +83,10 @@ public interface ApiService {
             @Header(AppConfig.HEADER_KEY) String authorization,
             @Field("device_token") String firebaseToken, @Field("channel") int channel,
             @Field("mac") String macMD5);
+
+    @GET("/app/get-price")
+    Call<PriceExpandResponse> getPricesExpand(@Header(AppConfig.HEADER_KEY) String authorization,
+                                              @Query("date") String date);
 
     @GET("/app/get-price")
     Call<PriceResponse> getPrices(@Header(AppConfig.HEADER_KEY) String authorization,
@@ -192,7 +197,7 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("/subscriber/reset-password")
     Call<BaseResponse> resetPassword(@Field("username") String username,
-                                      @Field("new_password") String newPassword);
+                                     @Field("new_password") String newPassword);
 
     @FormUrlEncoded
     @POST("/subscriber/change-password")

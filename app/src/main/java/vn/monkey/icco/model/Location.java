@@ -29,6 +29,7 @@ public class Location {
     private Integer precipitation;
 
     private List<Location> events;
+    private List<Location> histories;
 
     public String getWindSpeed() {
         return windSpeed;
@@ -199,5 +200,13 @@ public class Location {
 
     public void setPrecipitation(Integer precipitation) {
         this.precipitation = precipitation;
+    }
+
+    public List<Location> getHistories() {
+        return histories;
+    }
+
+    public void setHistories(List<Location> histories) {
+        this.histories = histories;
     }
 }

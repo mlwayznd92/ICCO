@@ -58,10 +58,10 @@
     <string name="fertility_label">Fertility:</string>
     <string name="close">Close</string>
     <string name="title_activity_price">Price</string>
-    <string name="province_price">Province</string>
+    <string name="province_price">Province/Commune</string>
     <string name="change_info_price">Change</string>
     <string name="organisation">Organisation</string>
-    <string name="average_price">Average</string>
+    <string name="average_price">Price</string>
     <string name="unit_price">Unit</string>
     <string name="coffee_price">Coffee price:</string>
     <!-- notification-->
@@ -169,4 +169,6 @@
     <string name="old_password_label">Old password:</string>
     <string name="new_password">New Password</string>
     <string name="old_password">Old password</string>
+    <string name="type">Type</string>
+    <string name="company">Company</string>
 </resources>

@@ -15,6 +15,8 @@ public class Price implements Comparable {
     private String unit;
     private Long createdDate;
     private Long coffeeOldId;
+    private String type;
+    private String company;
 
     public Long getCoffeeOldId() {
         return coffeeOldId;
@@ -72,13 +74,28 @@ public class Price implements Comparable {
         this.unit = unit;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
     @Override
     public int compareTo(@NonNull Object obj) {
         try {
             Long createDateObj = ((Price) obj).getCreatedDate();
             return this.getCreatedDate().compareTo(createDateObj);
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             return 0;
         }
     }

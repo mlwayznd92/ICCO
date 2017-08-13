@@ -54,6 +54,7 @@ public class MapDetailFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private Marker marker;
     private List<Location> events;
+    private List<Location> histories;
     private WeatherDayAdapter mRecyclerAdapter;
     private TextView tvAddress, tvDate, tvWtTemp, tvDescription, tvWindSpeed, tvWindDirection,
             tvAmountOfRain;
@@ -129,24 +130,24 @@ public class MapDetailFragment extends Fragment {
      */
     public void initGraph(GraphView gvTemperature, GraphView gvRain) {
 
-        if (events == null || events.size() < 2) return;
+        if (histories == null || histories.size() < 2) return;
 
-        DataPoint[] highs = new DataPoint[events.size()];
-        DataPoint[] lows = new DataPoint[events.size()];
-        DataPoint[] rains = new DataPoint[events.size()];
-        String labelDate[] = new String[events.size()];
+        DataPoint[] highs = new DataPoint[histories.size()];
+        DataPoint[] lows = new DataPoint[histories.size()];
+        DataPoint[] rains = new DataPoint[histories.size()];
+        String labelDate[] = new String[histories.size()];
 
         int tMax = 0;
-        int tMin = events.get(0).gettMin();
+        int tMin = histories.get(0).gettMin();
         int rainMax = 0;
-        int rainMin = events.get(0).getPrecipitation();
-        for (int i = 0; i < events.size(); i++) {
-            Location event = events.get(i);
+        int rainMin = histories.get(0).getPrecipitation();
+        for (int i = 0; i < histories.size(); i++) {
+            Location event = histories.get(i);
             if (tMax < event.gettMax()) tMax = event.gettMax();
             if (tMin > event.gettMin()) tMin = event.gettMin();
             if (rainMax < event.getPrecipitation()) rainMax = event.getPrecipitation();
             if (rainMin > event.getPrecipitation()) rainMin = event.getPrecipitation();
-            labelDate[i] = (i == 0 || i == (events.size() - 1)) ?
+            labelDate[i] = (i == 0 || i == (histories.size() - 1)) ?
                     Util.getDateFromLong(event.getTimestamp(), KeyConstant.DATE_FORMAT_DD_MM,
                             true) : "";
             highs[i] = new DataPoint(i, event.gettMax());
@@ -171,7 +172,7 @@ public class MapDetailFragment extends Fragment {
         gvTemperature.getGridLabelRenderer().setLabelFormatter(labelYTemp);
         gvTemperature.setTitle(
                 String.format(getString(R.string.title_temperature_graph), marker.getTitle(),
-                        labelDate[0], labelDate[events.size() - 1]));
+                        labelDate[0], labelDate[histories.size() - 1]));
 
         // rain graph
         BarGraphSeries<DataPoint> rainGraph = new BarGraphSeries<>(rains);
@@ -182,7 +183,7 @@ public class MapDetailFragment extends Fragment {
         gvRain.getGridLabelRenderer().setLabelFormatter(labelYRain);
         gvRain.setTitle(
                 String.format(getString(R.string.title_rain_graph), marker.getTitle(), labelDate[0],
-                        labelDate[events.size() - 1]));
+                        labelDate[histories.size() - 1]));
 
 
         // legend
@@ -205,6 +206,7 @@ public class MapDetailFragment extends Fragment {
         Location location = Manager.MAPS.get(key);
         events.add(location);
         events.addAll(location.getEvents());
+        histories = location.getHistories();
         mRecyclerAdapter.notifyDataSetChanged();
         initGraph(gvTemperature, gvRain);
 

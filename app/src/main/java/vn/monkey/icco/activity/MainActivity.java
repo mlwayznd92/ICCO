@@ -34,6 +34,7 @@ import vn.monkey.icco.fragment.BuyTabsFragment;
 import vn.monkey.icco.fragment.GAPFragment;
 import vn.monkey.icco.fragment.MapFragment;
 import vn.monkey.icco.fragment.NewsTabsFragment;
+import vn.monkey.icco.fragment.PriceExpandFragment;
 import vn.monkey.icco.fragment.PriceFragment;
 import vn.monkey.icco.fragment.QuestionAnswerFragment;
 import vn.monkey.icco.fragment.SaleTabsFragment;
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity
         } else if (KeyConstant.MENU_PRICE.equals(type)) {
             titleToolbar.setText(R.string.price);
             navigationView.setCheckedItem(R.id.nav_price);
-            replaceFragment(new PriceFragment());
+            replaceFragment(new PriceExpandFragment());
         } else if (KeyConstant.MENU_SALE.equals(type)) {
             titleToolbar.setText(R.string.sale);
             navigationView.setCheckedItem(R.id.nav_sale);
@@ -145,7 +146,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_price:
                 titleToolbar.setText(R.string.price);
-                replaceFragment(new PriceFragment());
+                replaceFragment(new PriceExpandFragment());
                 break;
             case R.id.nav_sale:
                 titleToolbar.setText(R.string.sale);

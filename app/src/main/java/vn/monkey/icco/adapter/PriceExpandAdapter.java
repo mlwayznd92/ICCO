@@ -122,7 +122,7 @@ public class PriceExpandAdapter extends BaseExpandableListAdapter
         // set content
         tvProvince.setText(price.getProvinceName());
         tvType.setText(price.getType());
-        tvPrice.setText(Util.formatNumber(price.getPriceAverage()) + "(" + price.getUnit() + ")");
+        tvPrice.setText(Util.formatNumber(price.getPriceAverage()));
         tvCompany.setText(price.getCompany());
 
         return convertView;

@@ -33,17 +33,19 @@
     <string name="amount_of_rain_label">Lượng mưa:</string>
     <string name="answer_label">Trả lời:</string>
     <string name="app_name">Green Coffee</string>
-    <string name="average_price">Giá</string>
+    <string name="average_price">Đơn Giá(VND/kg)</string>
     <string name="back">Quay lại</string>
     <string name="buy">Cần mua</string>
     <string name="buy_tab_name">Cần mua</string>
     <string name="buy_trans_tab_name">Lịch sử</string>
     <string name="cancel">Hủy</string>
     <string name="change_info_price">Thay đổi</string>
+    <string name="change_password">Thay đổi mật khẩu</string>
     <string name="choose_location">Chọn vị trí</string>
     <string name="close">Đóng</string>
     <string formatted="false" name="coffee_graph_title">Giá cà phê tại %s từ %s đến %s</string>
     <string name="coffee_price">Giá cà phê:</string>
+    <string name="company">Nguồn báo giá</string>
     <string name="data_not_enough">Không đủ dữ liệu</string>
     <string name="date">Ngày</string>
     <string name="description">Mô tả</string>
@@ -56,7 +58,7 @@
     <string name="female">Nữ</string>
     <string name="fertility_label">Độ phì nhiêu:</string>
     <string name="first_name">Tên</string>
-    <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="forgot_password">Quên mật khẩu</string>
     <string name="free_shipping_free_turn">Miễn phí vận chuyển. Miễn phí giao trả</string>
     <string name="full_name">Tên đầy đủ</string>
     <string name="full_name_label">Tên đầy đủ:</string>
@@ -81,7 +83,11 @@
     <string formatted="false" name="member_since_x">Thành viên từ %s</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="new_password">Mật khẩu mới</string>
+    <string name="new_password_label">Mật khẩu mới:</string>
     <string name="news">Tin tức</string>
+    <string name="old_password">Mật khẩu cũ</string>
+    <string name="old_password_label">Mật khẩu cũ:</string>
     <string name="organisation">Tổ chức</string>
     <string name="over_current_date">Vượt quá ngày hiện tại</string>
     <string name="password">Mật khẩu</string>
@@ -99,7 +105,7 @@
     <string name="profile">Thông tin</string>
     <string name="province">Tỉnh</string>
     <string name="province_label">Tỉnh:</string>
-    <string name="province_price">Tỉnh</string>
+    <string name="province_price">Tỉnh/xã</string>
     <string name="question_and_answer">Hỏi và trả lời</string>
     <string name="question_label">Câu hỏi:</string>
     <string name="require_location">Nhập vị trí</string>
@@ -135,6 +141,7 @@
     <string formatted="false" name="title_temperature_graph">Nhiệt độ tại %s từ %s đến %s</string>
     <string name="ton">tấn</string>
     <string name="total_quality">Tổng sản lượng:</string>
+    <string name="type">Loại</string>
     <string name="type_coffee">Loại cà phê:</string>
     <string name="un_named_road">Unnamed Road</string>
     <string name="unit_price">Đơn vị</string>

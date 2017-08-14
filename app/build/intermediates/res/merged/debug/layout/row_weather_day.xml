@@ -1,62 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_border_right_dark"
     android:orientation="vertical"
-    android:padding="@dimen/p10dp">
+    android:padding="@dimen/p15dp">
 
     <TextView
         android:id="@+id/tv_date"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Mon, 14 Jun" />
+        android:text="Mon, 14 Jun"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/tv_hour"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="7 AM" />
+        android:text="7 AM"
+        android:textStyle="bold"/>
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
 
         <ImageView
             android:id="@+id/imgWtDay"
             android:layout_width="70dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/ic_wt_rain" />
+            android:src="@drawable/ic_wt_rain"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/imgWtDay"
-            android:layout_centerVertical="true"
-            android:orientation="vertical">
+            android:layout_below="@+id/imgWtDay"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tvHigh"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="27"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/tvLow"
-                android:layout_marginTop="@dimen/p5dp"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
                 android:text="16"
-                android:textSize="16sp" />
+                android:textSize="16sp"/>
 
         </LinearLayout>
+
     </RelativeLayout>
 
 </LinearLayout>

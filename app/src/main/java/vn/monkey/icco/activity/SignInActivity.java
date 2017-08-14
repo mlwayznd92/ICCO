@@ -170,8 +170,8 @@ public class SignInActivity extends AppCompatActivity {
             Util.showToastMessage(this, String.format(rule, getString(R.string.phone_number)));
             return false;
         } else if (TextUtils.isEmpty(pass)) {
-            Util.showToastMessage(this, String.format(rule, getString(R.string.password)));
-            return false;
+            //            Util.showToastMessage(this, String.format(rule, getString(R.string.password)));
+            //            return false;
         }
         return true;
     }

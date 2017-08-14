@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/menu/menu_profile.xml",
+        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/menu/menu_profile.xml"
+    },
+    {
         "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/menu/menu_search.xml",
         "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/menu/menu_search.xml"
     },

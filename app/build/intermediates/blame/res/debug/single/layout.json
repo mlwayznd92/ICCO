@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/item_commune_list.xml",
+        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/layout/item_commune_list.xml"
+    },
+    {
         "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/design_navigation_item_subheader.xml",
         "source": "/home/mlwayz/.android/build-cache/9f32b0180dc0ac8f9de8c3140b4c9b18517feca6/output/res/layout/design_navigation_item_subheader.xml"
     },
@@ -92,12 +96,12 @@
         "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/layout/activity_main.xml"
     },
     {
-        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/activity_reset_password.xml",
-        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/layout/activity_reset_password.xml"
-    },
-    {
         "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/map_detail.xml",
         "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/layout/map_detail.xml"
+    },
+    {
+        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/activity_reset_pass.xml",
+        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/layout/activity_reset_pass.xml"
     },
     {
         "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/place_autocomplete_fragment.xml",
@@ -140,10 +144,6 @@
         "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/layout/layout_search.xml"
     },
     {
-        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/activity_change_password.xml",
-        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/layout/activity_change_password.xml"
-    },
-    {
         "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/fragment_news.xml",
         "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/layout/fragment_news.xml"
     },
@@ -164,6 +164,10 @@
         "source": "/home/mlwayz/.android/build-cache/9f32b0180dc0ac8f9de8c3140b4c9b18517feca6/output/res/layout/design_text_input_password_icon.xml"
     },
     {
+        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/item_province_list.xml",
+        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/layout/item_province_list.xml"
+    },
+    {
         "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",
         "source": "/home/mlwayz/.android/build-cache/9f32b0180dc0ac8f9de8c3140b4c9b18517feca6/output/res/layout/design_navigation_item_separator.xml"
     },
@@ -182,6 +186,10 @@
     {
         "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml",
         "source": "/home/mlwayz/.android/build-cache/9f32b0180dc0ac8f9de8c3140b4c9b18517feca6/output/res/layout/design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/fragment_prices_expand.xml",
+        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/layout/fragment_prices_expand.xml"
     },
     {
         "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
@@ -254,6 +262,10 @@
     {
         "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/row_exchange_sale.xml",
         "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/layout/row_exchange_sale.xml"
+    },
+    {
+        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/activity_change_pass.xml",
+        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/layout/activity_change_pass.xml"
     },
     {
         "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",

@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_phone_36px.png",
-        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/drawable-hdpi/ic_phone_36px.png"
-    },
-    {
         "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_sale_30px.png",
         "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/drawable-hdpi/ic_sale_30px.png"
+    },
+    {
+        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_phone_36px.png",
+        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/drawable-hdpi/ic_phone_36px.png"
     },
     {
         "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_idea_30px.png",
@@ -36,12 +36,12 @@
         "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/drawable-hdpi/ic_weather_48dp.png"
     },
     {
-        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_price_48dp.png",
-        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/drawable-hdpi/ic_price_48dp.png"
-    },
-    {
         "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_clear_black_24dp.png",
         "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/drawable-hdpi/ic_clear_black_24dp.png"
+    },
+    {
+        "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_price_48dp.png",
+        "source": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/res/drawable-hdpi/ic_price_48dp.png"
     },
     {
         "merged": "/media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_question_answer_black_24dp.png",

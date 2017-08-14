@@ -11,7 +11,7 @@
         android:id="@+id/province_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_weight="25"
         android:padding="10dp"
         android:text="@string/province"/>
@@ -20,7 +20,7 @@
         android:id="@+id/type"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_weight="25"
         android:padding="@dimen/p10dp"
         android:text="@string/type"/>
@@ -29,7 +29,7 @@
         android:id="@+id/price_average"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_weight="30"
         android:padding="@dimen/p10dp"
         android:text="@string/average_price"/>
@@ -38,7 +38,7 @@
         android:id="@+id/company"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_weight="20"
         android:padding="@dimen/p10dp"
         android:text="@string/company"/>

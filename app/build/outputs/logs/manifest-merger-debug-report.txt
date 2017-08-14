@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:2:1-105:12
+ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:2:1-113:12
 	package
 		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:3:11-35
 		INJECTED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml
@@ -37,7 +37,7 @@ ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/sr
 	android:name
 		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:8:22-78
 application
-ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:10:5-103:19
+ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:10:5-111:19
 MERGED from [ICCO:library:unspecified] /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/library/build/intermediates/bundles/default/AndroidManifest.xml:11:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/mlwayz/.android/build-cache/18da77d2ac54d29cc7cfb652d90e6e57c6eb02b0/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:25.3.1] /home/mlwayz/.android/build-cache/9f32b0180dc0ac8f9de8c3140b4c9b18517feca6/output/AndroidManifest.xml:29:5-20
@@ -148,20 +148,32 @@ ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/sr
 		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:93:13-49
 	android:name
 		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:92:13-52
-activity#vn.monkey.icco.activity.ProfileActivity
-ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:95:9-61
-	android:name
-		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:95:19-59
-activity#vn.monkey.icco.activity.PriceGraphActivity
-ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:97:9-99:52
+activity#vn.monkey.icco.activity.ChangePassActivity
+ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:95:9-97:51
 	android:screenOrientation
-		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:99:13-50
+		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:97:13-49
 	android:name
-		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:98:13-56
+		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:96:13-56
+activity#vn.monkey.icco.activity.ResetPasswordActivity
+ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:99:9-101:51
+	android:screenOrientation
+		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:101:13-49
+	android:name
+		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:100:13-59
+activity#vn.monkey.icco.activity.ProfileActivity
+ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:103:9-61
+	android:name
+		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:103:19-59
+activity#vn.monkey.icco.activity.PriceGraphActivity
+ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:105:9-107:52
+	android:screenOrientation
+		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:107:13-50
+	android:name
+		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:106:13-56
 activity#vn.monkey.icco.activity.TermActivity
-ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:101:9-58
+ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:109:9-58
 	android:name
-		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:101:19-56
+		ADDED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:109:19-56
 uses-sdk
 INJECTED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [ICCO:library:unspecified] /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/library/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
@@ -412,4 +424,4 @@ ADDED from [com.daimajia.slider:library:1.1.5] /home/mlwayz/.android/build-cache
 	android:name
 		ADDED from [com.daimajia.slider:library:1.1.5] /home/mlwayz/.android/build-cache/05a7b383bc8d2832a969b75ba24d4669d6a0925a/output/AndroidManifest.xml:12:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:2:1-105:12 reason: com.daimajia.slider.library requested WRITE_EXTERNAL_STORAGE
+IMPLIED from /media/mlwayz/Data/File/Android/Android/Project/Else/ICCO/ICCO/app/src/main/AndroidManifest.xml:2:1-113:12 reason: com.daimajia.slider.library requested WRITE_EXTERNAL_STORAGE

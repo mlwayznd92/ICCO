@@ -50,7 +50,7 @@
     <string name="province_price">Tỉnh/xã</string>
     <string name="change_info_price">Thay đổi</string>
     <string name="organisation">Tổ chức</string>
-    <string name="average_price">Đơn Giá</string>
+    <string name="average_price">Đơn Giá(VND/kg)</string>
     <string name="unit_price">Đơn vị</string>
     <string name="coffee_price">Giá cà phê:</string>
     <!-- notification-->

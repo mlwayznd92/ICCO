@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <include
         android:id="@+id/llToolbar"
@@ -69,15 +70,15 @@
             </LinearLayout>
 
             <!--<TextView-->
-                <!--android:id="@+id/tvPasswordRule"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="@dimen/p10dp"-->
-                <!--android:gravity="center"-->
-                <!--android:maxLines="2"-->
-                <!--android:text="@string/password_condition"-->
-                <!--android:textColor="@color/black_50"-->
-                <!--android:textSize="@dimen/s13sp"/>-->
+            <!--android:id="@+id/tvPasswordRule"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/p10dp"-->
+            <!--android:gravity="center"-->
+            <!--android:maxLines="2"-->
+            <!--android:text="@string/password_condition"-->
+            <!--android:textColor="@color/black_50"-->
+            <!--android:textSize="@dimen/s13sp"/>-->
 
             <Button
                 android:id="@+id/btnJoin"

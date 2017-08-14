@@ -61,7 +61,7 @@
     <string name="province_price">Province/Commune</string>
     <string name="change_info_price">Change</string>
     <string name="organisation">Organisation</string>
-    <string name="average_price">Price</string>
+    <string name="average_price">Price(VND/kg)</string>
     <string name="unit_price">Unit</string>
     <string name="coffee_price">Coffee price:</string>
     <!-- notification-->

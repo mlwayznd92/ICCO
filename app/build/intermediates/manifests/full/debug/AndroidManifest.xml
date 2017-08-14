@@ -115,6 +115,12 @@
         <activity
             android:name="vn.monkey.icco.activity.SignUpActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="vn.monkey.icco.activity.ChangePassActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="vn.monkey.icco.activity.ResetPasswordActivity"
+            android:screenOrientation="portrait" />
         <activity android:name="vn.monkey.icco.activity.ProfileActivity" />
         <activity
             android:name="vn.monkey.icco.activity.PriceGraphActivity"

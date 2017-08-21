@@ -24,6 +24,7 @@ import vn.monkey.icco.R;
 import vn.monkey.icco.model.CheckDeviceTokenResponse;
 import vn.monkey.icco.util.AppConfig;
 import vn.monkey.icco.util.KeyConstant;
+import vn.monkey.icco.util.LocaleHelper;
 import vn.monkey.icco.util.Manager;
 import vn.monkey.icco.util.Util;
 
@@ -35,6 +36,11 @@ public class SplashScreenActivity extends AppCompatActivity implements Animation
 
     private ImageView ivTop;
     private CustomApplication myApplication;
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

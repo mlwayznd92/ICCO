@@ -127,7 +127,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/p10dp"
                 android:background="@drawable/btn_base_light_border_light"
-                android:drawableLeft="@drawable/ic_fiber_new_black_24dp"
+                android:drawableLeft="@drawable/ic_idea_30px"
                 android:paddingLeft="@dimen/p10dp"
                 android:text="@string/news"
                 android:textColor="@color/black"

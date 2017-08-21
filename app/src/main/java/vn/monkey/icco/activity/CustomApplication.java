@@ -1,5 +1,6 @@
 package vn.monkey.icco.activity;
 
+import android.content.Context;
 import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
@@ -20,6 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import vn.monkey.icco.network.ApiService;
 import vn.monkey.icco.network.PersistentCookieStore;
 import vn.monkey.icco.util.AppConfig;
+import vn.monkey.icco.util.LocaleHelper;
 
 
 /**
@@ -30,6 +32,11 @@ public class CustomApplication extends MultiDexApplication {
     public static OkHttpClient okHttpClient;
     public Retrofit retrofit;
     public ApiService apiService;
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
 
     @Override
     public void onCreate() {

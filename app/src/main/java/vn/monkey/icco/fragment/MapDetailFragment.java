@@ -56,8 +56,8 @@ public class MapDetailFragment extends Fragment {
     private List<Location> events;
     private List<Location> histories;
     private WeatherDayAdapter mRecyclerAdapter;
-    private TextView tvAddress, tvDate, tvWtTemp, tvDescription, tvWindSpeed, tvWindDirection,
-            tvAmountOfRain;
+    private TextView tvAddress, tvDate, tvWtTemp, tvWtTempMiMa, tvDescription, tvWindSpeed,
+            tvWindDirection, tvAmountOfRain;
     private ImageView imgWtDay;
     private GraphView gvRain, gvTemperature;
 
@@ -91,6 +91,7 @@ public class MapDetailFragment extends Fragment {
         tvAddress = (TextView) mView.findViewById(R.id.tvAddress);
         tvDate = (TextView) mView.findViewById(R.id.tvDate);
         tvWtTemp = (TextView) mView.findViewById(R.id.tvTemperature);
+        tvWtTempMiMa = (TextView) mView.findViewById(R.id.tvTemperatureMiMa);
         tvDescription = (TextView) mView.findViewById(R.id.tvDescription);
         tvAmountOfRain = (TextView) mView.findViewById(R.id.tvAmoutOfRain);
         tvWindSpeed = (TextView) mView.findViewById(R.id.tvWindSpeed);
@@ -215,6 +216,7 @@ public class MapDetailFragment extends Fragment {
         tvAddress.setText(location.getLocationLv2());
         tvDate.setText(Util.getDayMonthYear(myApplication, location.getTimestamp()));
         tvWtTemp.setText(location.getWtTemp().replace(" ⁰C", ""));
+        tvWtTempMiMa.setText(location.getTemp());
         tvAmountOfRain.setText(location.getAmoutOfRain());
         tvWindSpeed.setText(location.getWindSpeed());
         tvWindDirection.setText(location.getWindDirection());
@@ -262,6 +264,7 @@ public class MapDetailFragment extends Fragment {
                                 Picasso.with(myApplication).load(location.getWtImage())
                                         .into(imgWtDay);
                                 tvWtTemp.setText(location.getWtTemp().replace(" ⁰C", ""));
+                                tvWtTempMiMa.setText(location.getTemp());
                                 tvAmountOfRain.setText(location.getAmoutOfRain());
                                 tvWindSpeed.setText(location.getWindSpeed());
                                 tvWindDirection.setText(location.getWindDirection());

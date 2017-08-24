@@ -38,6 +38,7 @@ import vn.monkey.icco.fragment.PriceExpandFragment;
 import vn.monkey.icco.fragment.PriceFragment;
 import vn.monkey.icco.fragment.QuestionAnswerFragment;
 import vn.monkey.icco.fragment.SaleTabsFragment;
+import vn.monkey.icco.fragment.SoilFertilityFragment;
 import vn.monkey.icco.util.KeyConstant;
 import vn.monkey.icco.util.LocaleHelper;
 import vn.monkey.icco.util.Manager;
@@ -128,6 +129,10 @@ public class MainActivity extends AppCompatActivity
             titleToolbar.setText(R.string.pest_and_disease);
             navigationView.setCheckedItem(R.id.nav_pest_and_disease);
             replaceFragment(new GAPFragment());
+        } else if (KeyConstant.MENU_SOIL_FERTILITY.equals(type)) {
+            titleToolbar.setText(R.string.soil_fertility);
+            navigationView.setCheckedItem(R.id.nav_soil_fertility);
+            replaceFragment(new SoilFertilityFragment());
         }
         updateMenuNavigator();
     }
@@ -186,6 +191,10 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_pest_and_disease:
                 titleToolbar.setText(R.string.pest_and_disease);
                 replaceFragment(new GAPFragment());
+                break;
+            case R.id.nav_soil_fertility:
+                titleToolbar.setText(R.string.soil_fertility);
+                replaceFragment(new SoilFertilityFragment());
                 break;
             case R.id.nav_logout:
                 Manager.logout(myApplication);

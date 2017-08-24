@@ -12,6 +12,7 @@ public class KeyConstant {
 
     public static String APP_CODE = "green_coffee_";
     public static String MENU_WEATHER_INFO = "MENU_WEATHER_INFO";
+    public static String MENU_SOIL_FERTILITY = "MENU_SOIL_FERTILITY";
     public static String MENU_PRICE = "MENU_PRICE";
     public static String MENU_SALE = "MENU_SALE";
     public static String MENU_BUY = "MENU_BUY";

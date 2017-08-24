@@ -161,6 +161,7 @@
         <item>Sep</item>
         <item>Oct</item>
         <item>Nov</item>
+
         <item>Dec</item>
     </string-array>
     <string name="am">AM</string>
@@ -170,5 +171,5 @@
     <string name="new_password">New Password</string>
     <string name="old_password">Old password</string>
     <string name="type">Type</string>
-    <string name="company">Company</string>
+    <string name="company">Qouted by</string>
 </resources>

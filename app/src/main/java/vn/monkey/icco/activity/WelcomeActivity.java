@@ -49,6 +49,14 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         });
 
+        // soil fertility
+        findViewById(R.id.btnSoilFertility).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeActivity(KeyConstant.MENU_SOIL_FERTILITY);
+            }
+        });
+
         // price
         findViewById(R.id.btnPrice).setOnClickListener(new View.OnClickListener() {
             @Override

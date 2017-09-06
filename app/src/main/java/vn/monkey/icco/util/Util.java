@@ -244,7 +244,7 @@ public class Util {
      */
     public static String getDayMonthYear(Context context, long time) {
         Calendar calendar = Calendar.getInstance();
-        calendar.setTimeZone(TimeZone.getTimeZone("GMT"));
+        //calendar.setTimeZone(TimeZone.getTimeZone("GMT"));
         calendar.setTimeInMillis(time * 1000);
         String day = "";
         try {
@@ -253,7 +253,7 @@ public class Util {
             String[] monthOfYear = context.getResources().getStringArray(R.array.month_of_year);
             day = calendar.get(Calendar.DAY_OF_MONTH) + " " +
                     monthOfYear[calendar.get(Calendar.MONTH)] + " " + calendar.get(Calendar.YEAR) +
-                    ", " + (hour > 12 ? (hour - 12) + " PM" : hour + " AM");
+                    ", " + (hour > 12 ? (hour - 12) + " PM" : hour + (hour == 12 ? " PM" : " AM"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -267,7 +267,7 @@ public class Util {
      */
     public static String getDateDayMonth(Context context, long time) {
         Calendar calendar = Calendar.getInstance();
-        calendar.setTimeZone(TimeZone.getTimeZone("GMT"));
+        //calendar.setTimeZone(TimeZone.getTimeZone("GMT"));
         calendar.setTimeInMillis(time * 1000);
         String day = "";
         try {

@@ -63,13 +63,14 @@ public class WeatherDayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         long timestamp = location.getTimestamp();
         Calendar calendar = Calendar.getInstance();
-        calendar.setTimeZone(TimeZone.getTimeZone("GMT"));
+        //calendar.setTimeZone(TimeZone.getTimeZone("GMT"));
         calendar.setTimeInMillis(timestamp * 1000);
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
 
         Picasso.with(myViewHolder.context).load(location.getWtImage()).into(myViewHolder.imgWtDay);
         myViewHolder.tvDate.setText(Util.getDateDayMonth(myViewHolder.context, timestamp));
-        myViewHolder.tvHour.setText(hour > 12 ? (hour - 12) + " PM" : hour + " AM");
+        myViewHolder.tvHour
+                .setText(hour > 12 ? (hour - 12) + " PM" : hour + (hour == 12 ? " PM" : " AM"));
         myViewHolder.tvHigh.setText(String.format(myViewHolder.context.getString(R.string.do_),
                 String.valueOf(location.gettMax())));
         myViewHolder.tvLow.setText(String.format(myViewHolder.context.getString(R.string.do_),

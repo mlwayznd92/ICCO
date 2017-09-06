@@ -82,8 +82,8 @@ public class MapFragment extends Fragment
     }
 
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_maps, container, false);
         context = mView.getContext();
         myApplication = (CustomApplication) context.getApplicationContext();
@@ -120,12 +120,12 @@ public class MapFragment extends Fragment
      */
     private void askPermission() {
         if (Build.VERSION.SDK_INT >= 23) {
-            if (ContextCompat.checkSelfPermission(getActivity(),
-                    Manifest.permission.ACCESS_FINE_LOCATION) ==
-                    PackageManager.PERMISSION_GRANTED &&
-                    ContextCompat.checkSelfPermission(getActivity(),
+            if (ContextCompat
+                    .checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) ==
+                    PackageManager.PERMISSION_GRANTED && ContextCompat
+                    .checkSelfPermission(getActivity(),
                             Manifest.permission.ACCESS_COARSE_LOCATION) ==
-                            PackageManager.PERMISSION_GRANTED) {
+                    PackageManager.PERMISSION_GRANTED) {
             } else {
                 ActivityCompat.requestPermissions(getActivity(),
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
@@ -148,10 +148,10 @@ public class MapFragment extends Fragment
         googleMap = mGoogleMap;
         if (ContextCompat.checkSelfPermission(getActivity(),
                 android.Manifest.permission.ACCESS_FINE_LOCATION) ==
-                PackageManager.PERMISSION_GRANTED &&
-                ContextCompat.checkSelfPermission(getActivity(),
+                PackageManager.PERMISSION_GRANTED && ContextCompat
+                .checkSelfPermission(getActivity(),
                         android.Manifest.permission.ACCESS_COARSE_LOCATION) ==
-                        PackageManager.PERMISSION_GRANTED) {
+                PackageManager.PERMISSION_GRANTED) {
             googleMap.setMyLocationEnabled(true);
             googleMap.getUiSettings().setMyLocationButtonEnabled(true);
             GPSTracker gps = new GPSTracker(getActivity());
@@ -179,8 +179,8 @@ public class MapFragment extends Fragment
      */
     private void setButtonListener() {
 
-        MapWrapperLayout mapWrapperLayout = (MapWrapperLayout) mView
-                .findViewById(R.id.map_relative_layout);
+        MapWrapperLayout mapWrapperLayout =
+                (MapWrapperLayout) mView.findViewById(R.id.map_relative_layout);
 
         // MapWrapperLayout initialization
         // 39 - default marker height
@@ -189,31 +189,33 @@ public class MapFragment extends Fragment
 
         // Setting custom OnTouchListener which deals with the pressed state
         // so it shows up
-        OnInfoWindowElemTouchListener btnInfoListener = new OnInfoWindowElemTouchListener(
-                btnDetail) {
-            @Override
-            protected void onClickConfirmed(View v, Marker marker) {
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction()
-                        .add(R.id.flContainer, new MapDetailFragment(marker))
-                        .addToBackStack(null).commit();
-                searchView.closeSearch();
-            }
-        };
+        OnInfoWindowElemTouchListener btnInfoListener =
+                new OnInfoWindowElemTouchListener(btnDetail) {
+                    @Override
+                    protected void onClickConfirmed(View v, Marker marker) {
+                        FragmentManager fragmentManager = getFragmentManager();
+                        fragmentManager.beginTransaction()
+                                .add(R.id.flContainer, new MapDetailFragment(marker))
+                                .addToBackStack(null).commit();
+                        searchView.closeSearch();
+                    }
+                };
 
         // Setting custom OnTouchListener which deals with the pressed state
         // so it shows up
-        OnInfoWindowElemTouchListener btnAdviceListener = new OnInfoWindowElemTouchListener(
-                btnAdvice) {
-            @Override
-            protected void onClickConfirmed(View v, Marker marker) {
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction()
-                        .add(R.id.flContainer, new MapAdviceFragment())
-                        .addToBackStack(null).commit();
-                searchView.closeSearch();
-            }
-        };
+        OnInfoWindowElemTouchListener btnAdviceListener =
+                new OnInfoWindowElemTouchListener(btnAdvice) {
+                    @Override
+                    protected void onClickConfirmed(View v, Marker marker) {
+                        //                        FragmentManager fragmentManager = getFragmentManager();
+                        //                        fragmentManager.beginTransaction()
+                        //                                .add(R.id.flContainer, new MapAdviceFragment()).addToBackStack(null)
+                        //                                .commit();
+                        //                        searchView.closeSearch();
+                        Util.showToastMessage(myApplication,
+                                getString(R.string.function_developing));
+                    }
+                };
 
         btnDetail.setOnTouchListener(btnInfoListener);
         btnAdvice.setOnTouchListener(btnAdviceListener);
@@ -229,7 +231,8 @@ public class MapFragment extends Fragment
     private void getStations() {
         // check time reload maps
         if (Manager.MAPS != null && Manager.MAPS.size() > 0 && Manager.LAST_RELOAD_MAPS != null &&
-                System.currentTimeMillis() - Manager.LAST_RELOAD_MAPS < AppConfig.TIME_RELOAD_MAPS) {
+                System.currentTimeMillis() - Manager.LAST_RELOAD_MAPS <
+                        AppConfig.TIME_RELOAD_MAPS) {
             prepareLocations(null, false);
             return;
         }
@@ -356,40 +359,62 @@ public class MapFragment extends Fragment
         mClusterManager.cluster();
     }
 
+    //    /**
+    //     * cluster map
+    //     */
+    //    private void prepareLocationsSearch(List<Station> stations) {
+    //        if (googleMap != null) googleMap.clear();
+    //        if (mClusterManager != null) mClusterManager.clearItems();
+    //        // check size
+    //        if (stations.size() <= 0) {
+    //            Util.showToastMessage(myApplication, getString(R.string.search_not_found));
+    //            return;
+    //        }
+    //        //        if (stations.size() <= 0) {
+    //        //            prepareLocations(null, false);
+    //        //            return;
+    //        //        }
+    //        //cluster
+    //        boolean isSetZoomLocation = false;
+    //        for (Station station : stations) {
+    //            Location location = new Location();
+    //            location.setId(station.getId());
+    //            location.setLatitude(Double.valueOf(station.getLatitude()));
+    //            location.setLongitude(Double.valueOf(station.getLongtitude()));
+    //            location.setTitle(station.getStationName());
+    //            location.setLocationLv1(String.valueOf(station.getProvinceName()));
+    //            location.setLocationLv2(station.getStationName());
+    //            LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+    //            MyItem myItem = new MyItem(latLng, location.getTitle());
+    //            mClusterManager.addItem(myItem);
+    //            if (!isSetZoomLocation) {
+    //                isSetZoomLocation = true;
+    //                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 8));
+    //            }
+    //        }
+    //        mClusterManager.cluster();
+    //    }
+
+
     /**
      * cluster map
      */
     private void prepareLocationsSearch(List<Station> stations) {
-        if (googleMap != null) googleMap.clear();
-        if (mClusterManager != null) mClusterManager.clearItems();
         // check size
         if (stations.size() <= 0) {
             Util.showToastMessage(myApplication, getString(R.string.search_not_found));
             return;
         }
-        //        if (stations.size() <= 0) {
-        //            prepareLocations(null, false);
-        //            return;
-        //        }
-        //cluster
+
         boolean isSetZoomLocation = false;
         for (Station station : stations) {
-            Location location = new Location();
-            location.setId(station.getId());
-            location.setLatitude(Double.valueOf(station.getLatitude()));
-            location.setLongitude(Double.valueOf(station.getLongtitude()));
-            location.setTitle(station.getStationName());
-            location.setLocationLv1(String.valueOf(station.getProvinceName()));
-            location.setLocationLv2(station.getStationName());
-            LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-            MyItem myItem = new MyItem(latLng, location.getTitle());
-            mClusterManager.addItem(myItem);
+            LatLng latLng = new LatLng(Double.valueOf(station.getLatitude()),
+                    Double.valueOf(station.getLongtitude()));
             if (!isSetZoomLocation) {
                 isSetZoomLocation = true;
-                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 8));
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 13));
             }
         }
-        mClusterManager.cluster();
     }
 
     @Override
@@ -436,8 +461,7 @@ public class MapFragment extends Fragment
     @Override
     /**
      *
-     */
-    public boolean onClusterClick(Cluster<MyItem> cluster) {
+     */ public boolean onClusterClick(Cluster<MyItem> cluster) {
         // Zoom in the cluster. Need to create LatLngBounds and including all the cluster items
         // inside of bounds, then animate to center of the bounds.
 

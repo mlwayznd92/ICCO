@@ -172,4 +172,6 @@
     <string name="old_password">Old password</string>
     <string name="type">Type</string>
     <string name="company">Qouted by</string>
+    <string name="function_developing">Function is developing</string>
+
 </resources>

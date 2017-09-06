@@ -8,8 +8,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
@@ -31,7 +33,6 @@ import vn.monkey.icco.model.News;
 import vn.monkey.icco.model.NewsResponse;
 import vn.monkey.icco.model.OnLoadMoreListener;
 import vn.monkey.icco.util.AppConfig;
-import vn.monkey.icco.util.KeyConstant;
 import vn.monkey.icco.util.LocaleHelper;
 import vn.monkey.icco.util.Manager;
 import vn.monkey.icco.util.Util;
@@ -42,7 +43,7 @@ import vn.monkey.icco.util.Util;
 
 public class NewsFragment extends Fragment {
 
-    public  boolean isSearching = false;
+    public boolean isSearching = false;
     private List<News> news;
     private Context context;
     private CustomApplication myApplication;
@@ -69,8 +70,8 @@ public class NewsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         setHasOptionsMenu(true);
         mView = inflater.inflate(R.layout.fragment_news, container, false);
         context = mView.getContext();
@@ -97,8 +98,8 @@ public class NewsFragment extends Fragment {
                 (System.currentTimeMillis() - Manager.LAST_RELOAD_NEWS) / (60 * 1000) <
                         AppConfig.TIME_RELOAD_NEWS) {
             news = new ArrayList<>();
-            for (News info : Manager.NEWS){
-                if (info.getCategoryId() ==  categoryId) news.add(info);
+            for (News info : Manager.NEWS) {
+                if (info.getCategoryId() == categoryId) news.add(info);
             }
             lastPage = Manager.LAST_PAGE_NEWS.get(categoryId);
         } else {
@@ -113,13 +114,14 @@ public class NewsFragment extends Fragment {
 
         // init recycler view
         mRecyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(
-                getActivity().getApplicationContext());
+        RecyclerView.LayoutManager mLayoutManager =
+                new LinearLayoutManager(getActivity().getApplicationContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerAdapter = new NewsAdapter(news, mRecyclerView);
         mRecyclerView.setAdapter(mRecyclerAdapter);
         loadMoreListener();
+        searchListener();
         clickDetailListener();
         if (isLoad) getNewsData();
     }
@@ -159,10 +161,10 @@ public class NewsFragment extends Fragment {
         // set load first time
         if (lastPage == 1) progressBar.setVisibility(View.VISIBLE);
         isGetData = false;
-        String headerAuthen = String
-                .format(AppConfig.HEADER_VALUE, Util.getUser(myApplication).getToken());
-        Call<NewsResponse> call = myApplication.apiService
-                .getNews(headerAuthen, categoryId, lastPage);
+        String headerAuthen =
+                String.format(AppConfig.HEADER_VALUE, Util.getUser(myApplication).getToken());
+        Call<NewsResponse> call =
+                myApplication.apiService.getNews(headerAuthen, categoryId, lastPage);
         call.enqueue(new Callback<NewsResponse>() {
             @Override
             public void onResponse(Call<NewsResponse> call, Response<NewsResponse> response) {
@@ -177,7 +179,7 @@ public class NewsFragment extends Fragment {
                         info.setCreatedDate(items.created_at);
                         info.setShortDescription(items.short_description);
                         info.setImage(items.image);
-                        info.setCategoryId(items.category_id);
+                        info.setCategoryId(items.category_id == null ? 1L : items.category_id);
                         news.add(info);
                         Manager.NEWS.add(info);
                         isGetData = true;
@@ -208,8 +210,7 @@ public class NewsFragment extends Fragment {
      */
     public void search(String keyword) {
         progressBar.setVisibility(View.VISIBLE);
-        String headerAuthen = String
-                .format(AppConfig.HEADER_VALUE, Manager.USER.getToken());
+        String headerAuthen = String.format(AppConfig.HEADER_VALUE, Manager.USER.getToken());
         Call<NewsResponse> call = myApplication.apiService.searchNews(headerAuthen, keyword);
         call.enqueue(new Callback<NewsResponse>() {
             @Override
@@ -225,8 +226,8 @@ public class NewsFragment extends Fragment {
                         info.setCreatedDate(items.created_at);
                         info.setShortDescription(items.short_description);
                         info.setImage(items.image);
-                        info.setCategoryId(items.category_id);
-                        if(categoryId == items.category_id) {
+                        info.setCategoryId(items.category_id == null ? 1L : items.category_id);
+                        if (categoryId == info.getCategoryId()) {
                             news.add(info);
                         }
                     }
@@ -249,21 +250,51 @@ public class NewsFragment extends Fragment {
      *
      */
     private void clickDetailListener() {
-        mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(
-                getActivity().getApplicationContext(), mRecyclerView,
-                new RecyclerTouchListener.ClickListener() {
-                    @Override
-                    public void onClick(View view, int position) {
-                        News info = news.get(position);
-                        fragmentManager.beginTransaction()
-                                .add(R.id.flContainer, new NewsDetailFragment(info))
-                                .addToBackStack(null).commit();
-                        searchView.closeSearch();
-                    }
+        mRecyclerView.addOnItemTouchListener(
+                new RecyclerTouchListener(getActivity().getApplicationContext(), mRecyclerView,
+                        new RecyclerTouchListener.ClickListener() {
+                            @Override
+                            public void onClick(View view, int position) {
+                                News info = news.get(position);
+                                fragmentManager.beginTransaction()
+                                        .add(R.id.flContainer, new NewsDetailFragment(info))
+                                        .addToBackStack(null).commit();
+                                searchView.closeSearch();
+                            }
 
-                    @Override
-                    public void onLongClick(View view, int position) {
-                    }
-                }));
+                            @Override
+                            public void onLongClick(View view, int position) {
+                            }
+                        }));
+    }
+
+
+    /**
+     * add search listener
+     */
+    private void searchListener() {
+        searchView.setSuggestions(null);
+        searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                isSearching = true;
+                if (!TextUtils.isEmpty(query)) {
+                    search(query);
+                }
+                return true;
+            }
+        });
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+        MenuItem menuItem = menu.findItem(R.id.action_search);
+        menuItem.setIcon(R.drawable.ic_search_black_24dp);
     }
 }

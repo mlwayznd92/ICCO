@@ -33,6 +33,7 @@ import vn.monkey.icco.event.LockNavigationDrawerEvent;
 import vn.monkey.icco.fragment.BuyTabsFragment;
 import vn.monkey.icco.fragment.GAPFragment;
 import vn.monkey.icco.fragment.MapFragment;
+import vn.monkey.icco.fragment.NewsFragment;
 import vn.monkey.icco.fragment.NewsTabsFragment;
 import vn.monkey.icco.fragment.PriceExpandFragment;
 import vn.monkey.icco.fragment.PriceFragment;
@@ -103,36 +104,45 @@ public class MainActivity extends AppCompatActivity
         if (Manager.USER == null) Manager.USER = Manager.getUserCached(myApplication);
         if (KeyConstant.MENU_WEATHER_INFO.equals(type)) {
             titleToolbar.setText(R.string.weather_info);
+            currentNav = R.id.nav_weather_info;
             navigationView.setCheckedItem(R.id.nav_weather_info);
             replaceFragment(new MapFragment());
         } else if (KeyConstant.MENU_PRICE.equals(type)) {
+            currentNav = R.id.nav_price;
             titleToolbar.setText(R.string.price);
             navigationView.setCheckedItem(R.id.nav_price);
             replaceFragment(new PriceExpandFragment());
         } else if (KeyConstant.MENU_SALE.equals(type)) {
+            currentNav = R.id.nav_sale;
             titleToolbar.setText(R.string.sale);
             navigationView.setCheckedItem(R.id.nav_sale);
             replaceFragment(new SaleTabsFragment());
         } else if (KeyConstant.MENU_BUY.equals(type)) {
+            currentNav = R.id.nav_buy;
             titleToolbar.setText(R.string.buy);
             navigationView.setCheckedItem(R.id.nav_buy);
             replaceFragment(new BuyTabsFragment());
         } else if (KeyConstant.MENU_NEWS.equals(type)) {
+            currentNav = R.id.nav_news;
             navigationView.setCheckedItem(R.id.nav_news);
             titleToolbar.setText(R.string.news);
-            replaceFragment(new NewsTabsFragment());
+            replaceFragment(new NewsFragment(1L, getSupportFragmentManager(), searchView));
         } else if (KeyConstant.MENU_QUESTION_AND_ANSWER.equals(type)) {
+            currentNav = R.id.nav_question_and_answer;
             titleToolbar.setText(R.string.question_and_answer);
             navigationView.setCheckedItem(R.id.nav_question_and_answer);
             replaceFragment(new QuestionAnswerFragment());
         } else if (KeyConstant.MENU_PEST_AND_DISEASE.equals(type)) {
+            currentNav = R.id.nav_pest_and_disease;
             titleToolbar.setText(R.string.pest_and_disease);
             navigationView.setCheckedItem(R.id.nav_pest_and_disease);
             replaceFragment(new GAPFragment());
         } else if (KeyConstant.MENU_SOIL_FERTILITY.equals(type)) {
             titleToolbar.setText(R.string.soil_fertility);
+            currentNav = R.id.nav_soil_fertility;
             navigationView.setCheckedItem(R.id.nav_soil_fertility);
-            replaceFragment(new SoilFertilityFragment());
+            //replaceFragment(new SoilFertilityFragment());
+            Util.showToastMessage(myApplication, getString(R.string.function_developing));
         }
         updateMenuNavigator();
     }
@@ -141,7 +151,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         Intent intent;
-        if (item.getItemId() != R.id.nav_buy && item.getItemId() != R.id.nav_sale) {
+        if (item.getItemId() != R.id.nav_soil_fertility) {
             currentNav = item.getItemId();
         }
         switch (item.getItemId()) {
@@ -182,7 +192,7 @@ public class MainActivity extends AppCompatActivity
             //            break;
             case R.id.nav_news:
                 titleToolbar.setText(R.string.news);
-                replaceFragment(new NewsTabsFragment());
+                replaceFragment(new NewsFragment(1L, getSupportFragmentManager(), searchView));
                 break;
             case R.id.nav_question_and_answer:
                 titleToolbar.setText(R.string.question_and_answer);
@@ -193,8 +203,15 @@ public class MainActivity extends AppCompatActivity
                 replaceFragment(new GAPFragment());
                 break;
             case R.id.nav_soil_fertility:
-                titleToolbar.setText(R.string.soil_fertility);
-                replaceFragment(new SoilFertilityFragment());
+                //titleToolbar.setText(R.string.soil_fertility);
+                //replaceFragment(new SoilFertilityFragment());
+                navigationView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        navigationView.setCheckedItem(currentNav);
+                    }
+                });
+                Util.showToastMessage(myApplication, getString(R.string.function_developing));
                 break;
             case R.id.nav_logout:
                 Manager.logout(myApplication);

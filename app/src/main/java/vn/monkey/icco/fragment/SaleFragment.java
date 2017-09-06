@@ -77,8 +77,8 @@ public class SaleFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         setHasOptionsMenu(true);
         mView = inflater.inflate(R.layout.fragment_sale, container, false);
         context = mView.getContext();
@@ -122,12 +122,10 @@ public class SaleFragment extends Fragment {
                 String locationName = "";
                 int price = 0;
                 try {
-                    totalQualityId = totalQualitiesRes
-                            .get(spinnerTotalQuality.getSelectedItem() + "").id;
-                    typeCoffee = typecoffeesRes
-                            .get(spinnerTypeCoffee.getSelectedItem() + "").id;
-                    soldId = soldsRes
-                            .get(spinnerSolds.getSelectedItem() + "").id;
+                    totalQualityId =
+                            totalQualitiesRes.get(spinnerTotalQuality.getSelectedItem() + "").id;
+                    typeCoffee = typecoffeesRes.get(spinnerTypeCoffee.getSelectedItem() + "").id;
+                    soldId = soldsRes.get(spinnerSolds.getSelectedItem() + "").id;
                     locationName = tvLocation.getText().toString();
                     price = Integer.valueOf(tvPrice.getText().toString());
                 } catch (Exception ex) {
@@ -141,9 +139,8 @@ public class SaleFragment extends Fragment {
         qualities = new ArrayList<>();
         spinnerTotalQuality = (Spinner) mView.findViewById(R.id.total_quality_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
-        totalQualitiesAdapter = new ArrayAdapter<String>(myApplication,
-                R.layout.spinner_item,
-                qualities);
+        totalQualitiesAdapter =
+                new ArrayAdapter<String>(myApplication, R.layout.spinner_item, qualities);
         // Specify the layout to use when the list of choices appears
         totalQualitiesAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -153,21 +150,16 @@ public class SaleFragment extends Fragment {
         // type coffee
         typeCoffees = new ArrayList<>();
         spinnerTypeCoffee = (Spinner) mView.findViewById(R.id.type_coffee_spinner);
-        typeCoffeesAdapter = new ArrayAdapter<String>(myApplication,
-                R.layout.spinner_item,
-                typeCoffees);
-        typeCoffeesAdapter
-                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        typeCoffeesAdapter =
+                new ArrayAdapter<String>(myApplication, R.layout.spinner_item, typeCoffees);
+        typeCoffeesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTypeCoffee.setAdapter(typeCoffeesAdapter);
 
         // solds
         solds = new ArrayList<>();
         spinnerSolds = (Spinner) mView.findViewById(R.id.sold_spinner);
-        soldsAdapter = new ArrayAdapter<String>(myApplication,
-                R.layout.spinner_item,
-                solds);
-        soldsAdapter
-                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        soldsAdapter = new ArrayAdapter<String>(myApplication, R.layout.spinner_item, solds);
+        soldsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSolds.setAdapter(soldsAdapter);
     }
 
@@ -190,7 +182,7 @@ public class SaleFragment extends Fragment {
                 LatLng latLng = place.getLatLng();
                 String address = place.getAddress().toString();
                 location = formatter.format(latLng.latitude) + "," +
-                           formatter.format(latLng.longitude);
+                        formatter.format(latLng.longitude);
                 if (TextUtils.isEmpty(address)) {
                     tvLocation.setText(location);
                 } else {
@@ -212,13 +204,13 @@ public class SaleFragment extends Fragment {
      */
     private void getTotalQuantities() {
         progressBar.setVisibility(View.VISIBLE);
-        String headerAuthen = String
-                .format(AppConfig.HEADER_VALUE, Util.getUser(myApplication).getToken());
+        String headerAuthen =
+                String.format(AppConfig.HEADER_VALUE, Util.getUser(myApplication).getToken());
         Call<TotalQuantityResponse> call = myApplication.apiService.getTotalQuantity(headerAuthen);
         call.enqueue(new Callback<TotalQuantityResponse>() {
             @Override
-            public void onResponse(
-                    Call<TotalQuantityResponse> call, Response<TotalQuantityResponse> response) {
+            public void onResponse(Call<TotalQuantityResponse> call,
+                                   Response<TotalQuantityResponse> response) {
                 progressBar.setVisibility(View.GONE);
                 if (response == null || response.body() == null) return;
                 if (response.body().success) {
@@ -247,13 +239,13 @@ public class SaleFragment extends Fragment {
      */
     private void getTypeCoffees() {
         progressBar.setVisibility(View.VISIBLE);
-        String headerAuthen = String
-                .format(AppConfig.HEADER_VALUE, Util.getUser(myApplication).getToken());
+        String headerAuthen =
+                String.format(AppConfig.HEADER_VALUE, Util.getUser(myApplication).getToken());
         Call<TypeCoffeeResponse> call = myApplication.apiService.getTypeCoffee(headerAuthen);
         call.enqueue(new Callback<TypeCoffeeResponse>() {
             @Override
-            public void onResponse(
-                    Call<TypeCoffeeResponse> call, Response<TypeCoffeeResponse> response) {
+            public void onResponse(Call<TypeCoffeeResponse> call,
+                                   Response<TypeCoffeeResponse> response) {
                 progressBar.setVisibility(View.GONE);
                 if (response == null || response.body() == null) return;
                 if (response.body().success) {
@@ -281,13 +273,12 @@ public class SaleFragment extends Fragment {
      */
     private void getSolds() {
         progressBar.setVisibility(View.VISIBLE);
-        String headerAuthen = String
-                .format(AppConfig.HEADER_VALUE, Util.getUser(myApplication).getToken());
+        String headerAuthen =
+                String.format(AppConfig.HEADER_VALUE, Util.getUser(myApplication).getToken());
         Call<SoldResponse> call = myApplication.apiService.getSold(headerAuthen);
         call.enqueue(new Callback<SoldResponse>() {
             @Override
-            public void onResponse(
-                    Call<SoldResponse> call, Response<SoldResponse> response) {
+            public void onResponse(Call<SoldResponse> call, Response<SoldResponse> response) {
                 progressBar.setVisibility(View.GONE);
                 if (response == null || response.body() == null) return;
                 if (response.body().success) {
@@ -341,20 +332,18 @@ public class SaleFragment extends Fragment {
      * @param location
      * @param price
      */
-    private void exchange(
-            int totalQuantityId, int soldId, int typeCoffee, String location, String locationName,
-            int price) {
+    private void exchange(int totalQuantityId, int soldId, int typeCoffee, String location,
+                          String locationName, int price) {
 
         progressBar.setVisibility(View.VISIBLE);
-        String headerAuthen = String
-                .format(AppConfig.HEADER_VALUE, Util.getUser(myApplication).getToken());
+        String headerAuthen =
+                String.format(AppConfig.HEADER_VALUE, Util.getUser(myApplication).getToken());
         Call<SaleResponse> call = myApplication.apiService
                 .exchange(headerAuthen, totalQuantityId, soldId, typeCoffee, location, locationName,
                         price);
         call.enqueue(new Callback<SaleResponse>() {
             @Override
-            public void onResponse(
-                    Call<SaleResponse> call, Response<SaleResponse> response) {
+            public void onResponse(Call<SaleResponse> call, Response<SaleResponse> response) {
                 progressBar.setVisibility(View.GONE);
                 if (response == null || response.body() == null) return;
                 if (response.body().success) {

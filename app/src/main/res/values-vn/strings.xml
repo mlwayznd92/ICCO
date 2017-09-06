@@ -159,4 +159,5 @@
     <string name="old_password">Mật khẩu cũ</string>
     <string name="type">Loại</string>
     <string name="company">Nguồn báo giá</string>
+    <string name="function_developing">Tính năng đang phát triển</string>
 </resources>

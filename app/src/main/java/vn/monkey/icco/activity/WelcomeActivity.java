@@ -11,6 +11,7 @@ import vn.monkey.icco.R;
 import vn.monkey.icco.util.KeyConstant;
 import vn.monkey.icco.util.LocaleHelper;
 import vn.monkey.icco.util.Manager;
+import vn.monkey.icco.util.Util;
 
 /**
  * Created by ANHTH on 15-Jun-16.
@@ -53,7 +54,8 @@ public class WelcomeActivity extends AppCompatActivity {
         findViewById(R.id.btnSoilFertility).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeActivity(KeyConstant.MENU_SOIL_FERTILITY);
+                Util.showToastMessage(myApplication, getString(R.string.function_developing));
+                //changeActivity(KeyConstant.MENU_SOIL_FERTILITY);
             }
         });
 

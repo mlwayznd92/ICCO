@@ -26,6 +26,7 @@
         android:layout_width="@dimen/p0dp"
         android:layout_height="wrap_content"
         android:layout_weight="70"
+        android:minHeight="100dp"
         android:orientation="vertical"
         android:paddingLeft="@dimen/p10dp">
 
@@ -47,8 +48,8 @@
             android:id="@+id/created_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/year"
-            android:layout_marginTop="3dp"/>
+            android:layout_marginTop="3dp"
+            android:textColor="@color/year"/>
 
     </LinearLayout>
 

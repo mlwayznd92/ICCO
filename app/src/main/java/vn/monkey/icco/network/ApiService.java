@@ -45,6 +45,7 @@ import vn.monkey.icco.model.TermResponse;
 import vn.monkey.icco.model.TotalQuantityResponse;
 import vn.monkey.icco.model.TypeCoffeeResponse;
 import vn.monkey.icco.model.UserResponse;
+import vn.monkey.icco.model.VersionAppResponse;
 import vn.monkey.icco.model.WeatherDetailResponse;
 import vn.monkey.icco.util.AppConfig;
 
@@ -204,6 +205,9 @@ public interface ApiService {
     Call<BaseResponse> changePassword(@Header(AppConfig.HEADER_KEY) String authorization,
                                       @Field("new_password") String newPassword,
                                       @Field("old_password") String oldPassword);
+
+    @GET("app/version-app?type=1")
+    Call<VersionAppResponse> getVersion();
 
     //----------------------------------------------------------------------------------------------
 

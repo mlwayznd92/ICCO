@@ -160,4 +160,6 @@
     <string name="type">Loại</string>
     <string name="company">Nguồn báo giá</string>
     <string name="function_developing">Tính năng đang phát triển</string>
+    <string name="green_coffee_update">Cập nhập Green Coffee</string>
+    <string name="next">Tiếp tục</string>
 </resources>

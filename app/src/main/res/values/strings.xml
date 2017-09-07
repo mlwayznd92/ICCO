@@ -173,5 +173,7 @@
     <string name="type">Type</string>
     <string name="company">Qouted by</string>
     <string name="function_developing">Function is developing</string>
+    <string name="green_coffee_update">Green Coffee update</string>
+    <string name="next">Continue</string>
 
 </resources>

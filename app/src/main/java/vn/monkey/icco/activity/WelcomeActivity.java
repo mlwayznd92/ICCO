@@ -1,13 +1,22 @@
 package vn.monkey.icco.activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import vn.monkey.icco.BuildConfig;
 import vn.monkey.icco.R;
+import vn.monkey.icco.model.VersionAppResponse;
 import vn.monkey.icco.util.KeyConstant;
 import vn.monkey.icco.util.LocaleHelper;
 import vn.monkey.icco.util.Manager;
@@ -41,6 +50,8 @@ public class WelcomeActivity extends AppCompatActivity {
      * init
      */
     private void init() {
+
+        getVersionApp();
 
         // weather info
         findViewById(R.id.btnWeatherInfo).setOnClickListener(new View.OnClickListener() {
@@ -142,4 +153,70 @@ public class WelcomeActivity extends AppCompatActivity {
 //            break;
 //        }
 //    }
+
+    /**
+     * call api to check update
+     */
+    public void getVersionApp() {
+        Call<VersionAppResponse> call = myApplication.apiService.getVersion();
+        call.enqueue(new Callback<VersionAppResponse>() {
+            @Override
+            public void onResponse(Call<VersionAppResponse> call,
+                                   Response<VersionAppResponse> response) {
+                if (response == null || response.body() == null) return;
+                if (response.body().success) {
+                    VersionAppResponse.Item  version = response.body().data.items;
+                    String versionName = BuildConfig.VERSION_NAME;
+                    if(versionName.compareTo(version.version) < 0) {
+                        showSettingsAlert(response.body().message, version.link);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<VersionAppResponse> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+    }
+
+    /**
+     * Function to show settings alert dialog
+     * On pressing Settings button will lauch Settings Options
+     */
+    public void showSettingsAlert(String message, final String link) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(WelcomeActivity.this);
+        alertDialog.setCancelable(false);
+
+        // Setting Dialog Title
+        alertDialog.setTitle(getString(R.string.green_coffee_update));
+
+        // Setting Dialog Message
+        alertDialog.setMessage(message);
+
+        // On pressing Settings button
+        alertDialog.setPositiveButton(getString(R.string.next),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        try {
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link)));
+                        } catch (android.content.ActivityNotFoundException ex) {
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link)));
+                        }
+                        finish();
+                    }
+                });
+
+        // on pressing cancel button
+        alertDialog.setNegativeButton(getString(R.string.cancel),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        dialog.cancel();
+                    }
+                });
+
+        // Showing Alert Message
+        alertDialog.show();
+    }
 }

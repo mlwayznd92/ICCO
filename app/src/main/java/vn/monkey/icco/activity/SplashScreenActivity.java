@@ -1,11 +1,14 @@
 package vn.monkey.icco.activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -22,6 +25,7 @@ import retrofit2.Response;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import vn.monkey.icco.R;
 import vn.monkey.icco.model.CheckDeviceTokenResponse;
+import vn.monkey.icco.model.VersionAppResponse;
 import vn.monkey.icco.util.AppConfig;
 import vn.monkey.icco.util.KeyConstant;
 import vn.monkey.icco.util.LocaleHelper;
@@ -136,4 +140,5 @@ public class SplashScreenActivity extends AppCompatActivity implements Animation
             return "";
         }
     }
+
 }

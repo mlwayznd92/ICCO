@@ -23,7 +23,7 @@ public class WeatherDetailResponse extends BaseResponse {
         public Integer tmax;
         public Integer tmin;
         public String wnddir;
-        public Long wndspd;
+        public Integer wndspd;
         public Long station_id;
         public Long timestamp;
         public Long created_at;

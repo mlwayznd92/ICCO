@@ -24,6 +24,7 @@ public class Location {
     private String windSpeed;
     private String windDirection;
     private Long timestamp;
+    private Integer wndspd;
     private Integer tMin;
     private Integer tMax;
     private Integer precipitation;
@@ -208,5 +209,13 @@ public class Location {
 
     public void setHistories(List<Location> histories) {
         this.histories = histories;
+    }
+
+    public Integer getWndspd() {
+        return wndspd;
+    }
+
+    public void setWndspd(Integer wndspd) {
+        this.wndspd = wndspd;
     }
 }

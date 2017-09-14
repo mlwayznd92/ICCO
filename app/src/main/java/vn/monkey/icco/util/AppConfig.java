@@ -11,8 +11,8 @@ public class AppConfig {
     public static final String X_API_KEY = "p6f3astoe8ymvigp11e3ruejeci8rjcw";
     public static final Integer API_TIME_OUT = 30;
 
-    public static final String HOST = "http://45.32.112.173:84";
-    public static final String HOST_HTTPS = "https://45.32.112.173:84";
+    public static final String HOST = "http://45.119.80.32:81";
+    public static final String HOST_HTTPS = "https://45.119.80.32:81";
 
     public static final Integer PRODUCT_SEARCH_NEWEST = 1;
     public static final Integer PRODUCT_SEARCH_POPULAR = 2;

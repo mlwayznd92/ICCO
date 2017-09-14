@@ -207,13 +207,13 @@ public class MapFragment extends Fragment
                 new OnInfoWindowElemTouchListener(btnAdvice) {
                     @Override
                     protected void onClickConfirmed(View v, Marker marker) {
-                        //                        FragmentManager fragmentManager = getFragmentManager();
-                        //                        fragmentManager.beginTransaction()
-                        //                                .add(R.id.flContainer, new MapAdviceFragment()).addToBackStack(null)
-                        //                                .commit();
-                        //                        searchView.closeSearch();
-                        Util.showToastMessage(myApplication,
-                                getString(R.string.function_developing));
+                        FragmentManager fragmentManager = getFragmentManager();
+                        fragmentManager.beginTransaction()
+                                .add(R.id.flContainer, new MapAdviceFragment(marker)).addToBackStack(null)
+                                .commit();
+                        searchView.closeSearch();
+                        //                        Util.showToastMessage(myApplication,
+                        //                                getString(R.string.function_developing));
                     }
                 };
 

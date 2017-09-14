@@ -12,6 +12,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import vn.monkey.icco.model.AdviceResponse;
 import vn.monkey.icco.model.AlertListResponse;
 import vn.monkey.icco.model.BaseResponse;
 import vn.monkey.icco.model.BuyResponse;
@@ -206,101 +207,15 @@ public interface ApiService {
                                       @Field("new_password") String newPassword,
                                       @Field("old_password") String oldPassword);
 
-    @GET("app/version-app?type=1")
-    Call<VersionAppResponse> getVersion();
+    @GET("app/version-app")
+    Call<VersionAppResponse> getVersion(@Query("type") Integer type);
+
+    @GET("app/gap-advice")
+    Call<AdviceResponse> getAdvice(@Header(AppConfig.HEADER_KEY) String authorization,
+                                   @Query("tem") Integer tem, @Query("pre") Integer pre,
+                                   @Query("wind") Integer wind);
 
     //----------------------------------------------------------------------------------------------
-
-
-    @GET("/rest/customer/active")
-    Call<BaseResponse> activeAccount(@Query("email") String email, @Query("token") String token);
-
-    @FormUrlEncoded
-    @POST("/rest/customer/register")
-    Call<RegisterResponse> registerCustomer(@Field("email") String email,
-                                            @Field("password") String password,
-                                            @Field("fullname") String fullname);
-
-    @GET("/rest/customer/is_logon")
-    Call<IsLogonResponse> checkIsLogon();
-
-    @GET("/rest/customer/is_active")
-    Call<BaseResponse> checkIsActive(@Header(AppConfig.HEADER_KEY) String authorization);
-
-    @FormUrlEncoded
-    @POST("/rest/customer/forgotpassword/")
-    Call<BaseResponse> resetPassword(@Field("email") String email);
-
-    @FormUrlEncoded
-    @POST("/rest/customer/logout")
-    Call<BaseResponse> logOut(@Header(AppConfig.HEADER_KEY) String authorization);
-
-
-    // can check lai response
-    @GET("/rest/image/get/{pos}/{id}")
-    Call<ImageListResponse> getImageSlideList(@Path("pos") int pos, @Path("id") int id);
-
-    @FormUrlEncoded
-    @POST("/rest/brand/follow")
-    Call<BaseResponse> followBrand(@Header(AppConfig.HEADER_KEY) String authorization,
-                                   @Field("brand_id") String brand_id);
-
-    @FormUrlEncoded
-    @POST("/rest/brand/unfollow")
-    Call<BaseResponse> unFollowBrand(@Header(AppConfig.HEADER_KEY) String authorization,
-                                     @Field("brand_id") String brand_id);
-
-    @FormUrlEncoded
-    @POST("/rest/product/like")
-    Call<BaseResponse> likeProduct(@Header(AppConfig.HEADER_KEY) String authorization,
-                                   @Field("product_id") String brand_id);
-
-    @FormUrlEncoded
-    @POST("/rest/product/unlike")
-    Call<BaseResponse> unLikeProduct(@Header(AppConfig.HEADER_KEY) String authorization,
-                                     @Field("product_id") String brand_id);
-
-    @Multipart
-    @POST("/rest/customer/profile")
-    Call<BaseResponse> updateAvatar(@Header("Authorization") String authorization,
-                                    @Part("password_cr") RequestBody password_cr,
-                                    @Part MultipartBody.Part filePart);
-
-
-    @Multipart
-    @POST("/rest/customer/profile")
-    Call<BaseResponse> updateGender(@Header("Authorization") String authorization,
-                                    @Part("gender") RequestBody gender);
-
-    //    @Multipart
-    //    @POST("/rest/customer/profile")
-    //    Call<BaseResponse> updateAvatar(@Header("Authorization") String authorization,
-    //                                    @Part("password_cr") RequestBody password_cr,
-    //                                    @PartMap() Map<String,RequestBody> mapFileAndName);
-
-
-    @Multipart
-    @POST("/rest/customer/profile")
-    Call<BaseResponse> updateFullName(@Header("Authorization") String authorization,
-                                      //                                      @Part("password_cr") RequestBody password_cr,
-                                      @Part("fullname") RequestBody fullname);
-
-    @Multipart
-    @POST("/rest/customer/profile")
-    Call<BaseResponse> updatePassword(@Header("Authorization") String authorization,
-                                      @Part("password_cr") RequestBody password_cr,
-                                      @Part("password_new") RequestBody password_new,
-                                      @Part("password_cf") RequestBody password_cf);
-
-    @FormUrlEncoded
-    @POST("/rest/customer/social_login")
-    Call<LoginResponse> loginSocial(@Field("vendor") String vendor,
-                                    @Field("access_token") String access_token,
-                                    @Field("access_token_secret") String access_token_secret,
-                                    @Field("email") String email);
-
-    @GET("/rest/product/hot_keywords")
-    Call<ListTopSearch> getTopSearch(@Query("page") int page, @Query("page_size") int page_size);
 
     @GET("/rest/notify/list")
     Call<AlertListResponse> getAlertList(@Header(AppConfig.HEADER_KEY) String authorization,

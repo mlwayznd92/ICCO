@@ -159,6 +159,7 @@ public class MapInfoAdapter implements GoogleMap.InfoWindowAdapter {
                         loc.setTemp(event.tmin + "⁰C - " + event.tmax + "⁰C");
                         loc.setAmoutOfRain(event.precipitation + event.precipitation_unit);
                         loc.setWindSpeed(event.wndspd_km_h);
+                        loc.setWndspd(event.wndspd);
                         loc.setWindDirection(event.wnddir);
                         loc.setTimestamp(event.timestamp);
                         loc.setPrecipitation(event.precipitation);
@@ -171,6 +172,7 @@ public class MapInfoAdapter implements GoogleMap.InfoWindowAdapter {
                         loc.setWtImage(history.image);
                         loc.setWtTemp(history.t_average);
                         loc.setWtDescription(history.content);
+                        loc.setWndspd(history.wndspd);
                         loc.settMin(history.tmin);
                         loc.settMax(history.tmax);
                         loc.setTemp(history.tmin + "⁰C - " + history.tmax + "⁰C");
@@ -194,6 +196,7 @@ public class MapInfoAdapter implements GoogleMap.InfoWindowAdapter {
                     location.setTimestamp(items.timestamp);
                     location.settMin(items.tmin);
                     location.settMax(items.tmax);
+                    location.setWndspd(items.wndspd);
                     location.setPrecipitation(items.precipitation);
                     setView(marker);
                     Manager.MAPS.put(key, location);

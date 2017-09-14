@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 import retrofit2.Call;
@@ -158,7 +159,7 @@ public class WelcomeActivity extends AppCompatActivity {
      * call api to check update
      */
     public void getVersionApp() {
-        Call<VersionAppResponse> call = myApplication.apiService.getVersion();
+        Call<VersionAppResponse> call = myApplication.apiService.getVersion(KeyConstant.ANDROID_CHANEL);
         call.enqueue(new Callback<VersionAppResponse>() {
             @Override
             public void onResponse(Call<VersionAppResponse> call,

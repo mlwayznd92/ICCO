@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <TextView
-        android:id="@+id/tvMapAdvice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/p10dp"
-        android:textColor="@color/black"
-        android:textSize="@dimen/s16sp"/>
+    <WebView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/wvMapAdvice"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+
 
     <ProgressBar
         android:id="@+id/progress_bar"

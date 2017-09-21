@@ -25,7 +25,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:paddingRight="@dimen/p10dp"
+                    android:padding="@dimen/p5dp"
                     android:text="@string/total_quality"/>
 
                 <Spinner
@@ -39,7 +39,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:paddingRight="@dimen/p10dp"
+                    android:padding="@dimen/p5dp"
                     android:text="@string/ton"/>
 
             </LinearLayout>
@@ -55,7 +55,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:paddingRight="@dimen/p10dp"
+                    android:padding="@dimen/p5dp"
                     android:text="@string/sold"/>
 
                 <Spinner
@@ -69,7 +69,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:paddingRight="@dimen/p10dp"
+                    android:padding="@dimen/p5dp"
                     android:text="@string/ton"/>
             </LinearLayout>
 
@@ -84,7 +84,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:paddingRight="@dimen/p10dp"
+                    android:padding="@dimen/p5dp"
                     android:text="@string/type_coffee"/>
 
                 <Spinner
@@ -107,8 +107,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:paddingRight="@dimen/p10dp"
-                    android:paddingTop="8dp"
+                    android:padding="@dimen/p5dp"
                     android:text="@string/location"/>
 
                 <TextView
@@ -116,8 +115,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:drawablePadding="@dimen/p10dp"
-                    android:paddingTop="8dp"
+                    android:padding="@dimen/p5dp"
                     android:text="@string/choose_location"/>
 
                 <ImageView
@@ -138,7 +136,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:paddingRight="@dimen/p10dp"
+                    android:padding="@dimen/p5dp"
                     android:text="@string/price_"/>
 
                 <EditText
@@ -146,7 +144,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:drawablePadding="@dimen/p10dp"
+                    android:padding="@dimen/p5dp"
                     android:imeOptions="actionDone"
                     android:inputType="number"/>
 
@@ -154,7 +152,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:paddingRight="@dimen/p10dp"
+                    android:padding="@dimen/p5dp"
                     android:text="@string/unit_vnd_kg"/>
 
             </LinearLayout>

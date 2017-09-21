@@ -16,11 +16,11 @@
             android:title="@string/pest_and_disease"
             />
 
-        <item
-            android:id="@+id/nav_soil_fertility"
-            android:icon="@drawable/soil_fertility_50px"
-            android:title="@string/soil_fertility"
-            />
+        <!--<item-->
+            <!--android:id="@+id/nav_soil_fertility"-->
+            <!--android:icon="@drawable/soil_fertility_50px"-->
+            <!--android:title="@string/soil_fertility"-->
+            <!--/>-->
 
         <item
             android:id="@+id/nav_price"

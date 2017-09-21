@@ -29,8 +29,8 @@ import vn.monkey.icco.util.Util;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-//    private final int LOGIN_FOR_BUY = 1000;
-//    private final int LOGIN_FOR_SALE = 1001;
+    //    private final int LOGIN_FOR_BUY = 1000;
+    //    private final int LOGIN_FOR_SALE = 1001;
     private CustomApplication myApplication;
 
 
@@ -62,14 +62,14 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         });
 
-        // soil fertility
-        findViewById(R.id.btnSoilFertility).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Util.showToastMessage(myApplication, getString(R.string.function_developing));
-                //changeActivity(KeyConstant.MENU_SOIL_FERTILITY);
-            }
-        });
+        //        // soil fertility
+        //        findViewById(R.id.btnSoilFertility).setOnClickListener(new View.OnClickListener() {
+        //            @Override
+        //            public void onClick(View v) {
+        //                Util.showToastMessage(myApplication, getString(R.string.function_developing));
+        //                //changeActivity(KeyConstant.MENU_SOIL_FERTILITY);
+        //            }
+        //        });
 
         // price
         findViewById(R.id.btnPrice).setOnClickListener(new View.OnClickListener() {
@@ -141,34 +141,35 @@ public class WelcomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (resultCode != RESULT_OK) return;
-//        switch (requestCode) {
-//        case LOGIN_FOR_BUY:
-//            changeActivity(KeyConstant.MENU_BUY);
-//            break;
-//        case LOGIN_FOR_SALE:
-//            changeActivity(KeyConstant.MENU_SALE);
-//            break;
-//        }
-//    }
+    //    @Override
+    //    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    //        super.onActivityResult(requestCode, resultCode, data);
+    //        if (resultCode != RESULT_OK) return;
+    //        switch (requestCode) {
+    //        case LOGIN_FOR_BUY:
+    //            changeActivity(KeyConstant.MENU_BUY);
+    //            break;
+    //        case LOGIN_FOR_SALE:
+    //            changeActivity(KeyConstant.MENU_SALE);
+    //            break;
+    //        }
+    //    }
 
     /**
      * call api to check update
      */
     public void getVersionApp() {
-        Call<VersionAppResponse> call = myApplication.apiService.getVersion(KeyConstant.ANDROID_CHANEL);
+        Call<VersionAppResponse> call =
+                myApplication.apiService.getVersion(KeyConstant.ANDROID_CHANEL);
         call.enqueue(new Callback<VersionAppResponse>() {
             @Override
             public void onResponse(Call<VersionAppResponse> call,
                                    Response<VersionAppResponse> response) {
                 if (response == null || response.body() == null) return;
                 if (response.body().success) {
-                    VersionAppResponse.Item  version = response.body().data.items;
+                    VersionAppResponse.Item version = response.body().data.items;
                     String versionName = BuildConfig.VERSION_NAME;
-                    if(versionName.compareTo(version.version) < 0) {
+                    if (versionName.compareTo(version.version) < 0) {
                         showSettingsAlert(response.body().message, version.link);
                     }
                 }
@@ -196,8 +197,8 @@ public class WelcomeActivity extends AppCompatActivity {
         alertDialog.setMessage(message);
 
         // On pressing Settings button
-        alertDialog.setPositiveButton(getString(R.string.next),
-                new DialogInterface.OnClickListener() {
+        alertDialog
+                .setPositiveButton(getString(R.string.next), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         try {
                             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link)));

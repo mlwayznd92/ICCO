@@ -138,11 +138,11 @@ public class MainActivity extends AppCompatActivity
             navigationView.setCheckedItem(R.id.nav_pest_and_disease);
             replaceFragment(new GAPFragment());
         } else if (KeyConstant.MENU_SOIL_FERTILITY.equals(type)) {
-            titleToolbar.setText(R.string.soil_fertility);
-            currentNav = R.id.nav_soil_fertility;
-            navigationView.setCheckedItem(R.id.nav_soil_fertility);
-            //replaceFragment(new SoilFertilityFragment());
-            Util.showToastMessage(myApplication, getString(R.string.function_developing));
+            //            titleToolbar.setText(R.string.soil_fertility);
+            //            currentNav = R.id.nav_soil_fertility;
+            //            navigationView.setCheckedItem(R.id.nav_soil_fertility);
+            //            //replaceFragment(new SoilFertilityFragment());
+            //            Util.showToastMessage(myApplication, getString(R.string.function_developing));
         }
         updateMenuNavigator();
     }
@@ -151,9 +151,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         Intent intent;
-        if (item.getItemId() != R.id.nav_soil_fertility) {
-            currentNav = item.getItemId();
-        }
+        //        if (item.getItemId() != R.id.nav_soil_fertility) {
+        //            currentNav = item.getItemId();
+        //        }
         switch (item.getItemId()) {
             case R.id.nav_weather_info:
                 titleToolbar.setText(R.string.weather_info);
@@ -202,17 +202,17 @@ public class MainActivity extends AppCompatActivity
                 titleToolbar.setText(R.string.pest_and_disease);
                 replaceFragment(new GAPFragment());
                 break;
-            case R.id.nav_soil_fertility:
-                //titleToolbar.setText(R.string.soil_fertility);
-                //replaceFragment(new SoilFertilityFragment());
-                navigationView.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        navigationView.setCheckedItem(currentNav);
-                    }
-                });
-                Util.showToastMessage(myApplication, getString(R.string.function_developing));
-                break;
+            //            case R.id.nav_soil_fertility:
+            //                //titleToolbar.setText(R.string.soil_fertility);
+            //                //replaceFragment(new SoilFertilityFragment());
+            //                navigationView.post(new Runnable() {
+            //                    @Override
+            //                    public void run() {
+            //                        navigationView.setCheckedItem(currentNav);
+            //                    }
+            //                });
+            //                Util.showToastMessage(myApplication, getString(R.string.function_developing));
+            //                break;
             case R.id.nav_logout:
                 Manager.logout(myApplication);
                 intent = new Intent(this, TermActivity.class);

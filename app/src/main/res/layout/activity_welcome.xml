@@ -59,26 +59,26 @@
                 android:textSize="@dimen/s14sp"
                 android:textStyle="bold"/>
 
-            <Button
-                android:id="@+id/btnSoilFertility"
-                android:layout_width="@dimen/p220dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/btnPestAndDisease"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/p10dp"
-                android:background="@drawable/btn_base_light_border_light"
-                android:drawableLeft="@drawable/soil_fertility_30px"
-                android:paddingLeft="@dimen/p10dp"
-                android:text="@string/soil_fertility"
-                android:textColor="@color/black"
-                android:textSize="@dimen/s14sp"
-                android:textStyle="bold"/>
+            <!--<Button-->
+                <!--android:id="@+id/btnSoilFertility"-->
+                <!--android:layout_width="@dimen/p220dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/btnPestAndDisease"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginTop="@dimen/p10dp"-->
+                <!--android:background="@drawable/btn_base_light_border_light"-->
+                <!--android:drawableLeft="@drawable/soil_fertility_30px"-->
+                <!--android:paddingLeft="@dimen/p10dp"-->
+                <!--android:text="@string/soil_fertility"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:textSize="@dimen/s14sp"-->
+                <!--android:textStyle="bold"/>-->
 
             <Button
                 android:id="@+id/btnPrice"
                 android:layout_width="@dimen/p220dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btnSoilFertility"
+                android:layout_below="@+id/btnPestAndDisease"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/p10dp"
                 android:background="@drawable/btn_base_light_border_light"

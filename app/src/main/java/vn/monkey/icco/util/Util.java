@@ -168,7 +168,7 @@ public class Util {
         if (date == null) return null;
         try {
             SimpleDateFormat fm = new SimpleDateFormat(format);
-            if (isGMT) fm.setTimeZone(TimeZone.getTimeZone("GMT"));
+            //if (isGMT) fm.setTimeZone(TimeZone.getTimeZone("GMT"));
             return fm.format(new Date(date * 1000));
         } catch (Exception ex) {
             return "";
@@ -184,7 +184,7 @@ public class Util {
         if (date == null) return null;
         try {
             SimpleDateFormat fm = new SimpleDateFormat(format);
-            if (isGMT) fm.setTimeZone(TimeZone.getTimeZone("GMT"));
+            //if (isGMT) fm.setTimeZone(TimeZone.getTimeZone("GMT"));
             return fm.format(date);
         } catch (Exception ex) {
             return "";
@@ -252,8 +252,12 @@ public class Util {
             Log.d(KeyConstant.APP_CODE, hour + "");
             String[] monthOfYear = context.getResources().getStringArray(R.array.month_of_year);
             day = calendar.get(Calendar.DAY_OF_MONTH) + " " +
-                    monthOfYear[calendar.get(Calendar.MONTH)] + " " + calendar.get(Calendar.YEAR) +
-                    ", " + (hour > 12 ? (hour - 12) + " PM" : hour + (hour == 12 ? " PM" : " AM"));
+                    monthOfYear[calendar.get(Calendar.MONTH)] + " " + calendar.get(Calendar.YEAR);
+
+//            day = calendar.get(Calendar.DAY_OF_MONTH) + " " +
+//                    monthOfYear[calendar.get(Calendar.MONTH)] + " " + calendar.get(Calendar.YEAR) +
+//                    ", " + (hour > 12 ? (hour - 12) + " PM" : hour + (hour == 12 ? " PM" : " AM"));
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
